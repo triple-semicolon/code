@@ -65,3 +65,575 @@ public class Rice02 {
  * try catch 안에서 호출해야 한다.!!!
 
 */
+
+-----------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Rice02 {
+	public static void main( String[] args ) {
+		System.out.println("HelloWorld");
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(
+				"jdbc:mariadb://183.111.242.21:3306/pukyung00",
+				"pukyung00","pukyung00!!1");
+			System.out.println( conn );
+			conn.close();
+			System.out.println("에러가 발생하면 이하의 코드는??");
+		}
+		catch( ClassNotFoundException e ) {
+			e.printStackTrace();
+		}
+		catch( SQLException e ) {
+			System.out.println( e.toString() );
+		}
+	}
+}
+/*	 DriverManager.getConnection() - conn.close();
+ * 
+ * getConnection() throws SQLException 
+ * - 이 함수 호출시에 SQLException 이 발생할 수 있는 사실이 명시되었다. 
+ * - 호출할 때 SQLException 을 잡을 수 있는 try catch 문 안에서 호출해야 한다.
+ * 
+ * throws XXX 로 선언된 함수는 호출 할 때 반드시 XXX 을 잡아 낼 수 있는 
+ * try catch 안에서 호출해야 한다.!!!
+
+*/
+
+
+-----------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Rice03 {
+	public static void main( String[] args ) {
+		System.out.println("HelloWorld");
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");	// DriverX
+			Connection conn = DriverManager.getConnection(
+				"jdbc:mariadb://183.111.242.21:3306/pukyung00",	// pukyung0X
+				"pukyung00","pukyung00!!1");
+			
+			Statement stmt = conn.createStatement();
+			System.out.println( stmt );
+			stmt.close();
+			
+			conn.close();
+			System.out.println("에러가 발생하면 이하의 코드는??");
+		}
+		catch( Exception e ) {	
+			e.printStackTrace();
+		}
+//		try 안에서 발생하는 모든 에러를 잡을 수 있음 : 문법 에러 아님 
+	}
+}
+/*	 Exception 모든 예외의 조상 : A t = new B(); -- A 가 B 의 조상일때 
+ * 		Exception e = new ClassNotFoundException(); 
+		Exception e = new SQLException()
+*/
+
+-----------------------------------------------------------------------------------
+
+MariaDB [pukyung00]> CREATE TABLE rice_T (
+    -> no INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    -> content VARCHAR(300) NULL );
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [pukyung00]> INSERT INTO rice_T VALUES( default , 'content');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [pukyung00]> SELECT * FROM rice_T;
++----+---------+
+| no | content |
++----+---------+
+|  1 | content |
++----+---------+
+1 row in set (0.00 sec)
+
+-----------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Rice03 {
+	public static void main( String[] args ) {
+		System.out.println("HelloWorld");
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");	// DriverX
+			Connection conn = DriverManager.getConnection(
+				"jdbc:mariadb://183.111.242.21:3306/pukyung00",	// pukyung0X
+				"pukyung00","pukyung00!!1");
+			
+			Statement stmt = conn.createStatement();
+			
+//			String sql = "INSERT INTO rice_T VALUES ( default,'content2')";
+			
+//			String content = "Hello^^*";
+//			String sql = "INSERT INTO rice_T VALUES ( default,'"+content+"')";
+
+			//	NULL 이 입력되나 'null' 이 입력되나?? - 바라는 바 아님
+			//	방지하려면 PreparedStatement 를 이용하면 된다.
+			String content = null;
+			String sql = "INSERT INTO rice_T VALUES ( default,'"+content+"')";
+			
+			stmt.executeUpdate( sql );
+			stmt.close();
+			
+			conn.close();
+			System.out.println("에러가 발생하면 이하의 코드는??");
+		}
+		catch( Exception e ) {	
+			e.printStackTrace();
+		}
+//		try 안에서 발생하는 모든 에러를 잡을 수 있음 : 문법 에러 아님 
+	}
+}
+/*	 Exception 모든 예외의 조상 : A t = new B(); -- A 가 B 의 조상일때 
+ * 		Exception e = new ClassNotFoundException(); 
+		Exception e = new SQLException()
+*/
+
+-----------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Rice04 {
+	public static void main( String[] args ) {
+		System.out.println("HelloWorld");
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");	// DriverX
+			Connection conn = DriverManager.getConnection(
+				"jdbc:mariadb://183.111.242.21:3306/pukyung00",	// pukyung0X
+				"pukyung00","pukyung00!!1");
+			
+			//	아래 코드도 외울 필요가 있음. SQL 문장을 바구니에 새긴다.
+			String sql = "INSERT INTO rice_T VALUES ( default, ? )";
+			PreparedStatement stmt = conn.prepareStatement( sql );
+			stmt.setString(1,"content3");
+			stmt.executeUpdate();
+			stmt.close();
+			
+			conn.close();
+		}
+		catch( Exception e ) {	
+			e.printStackTrace();
+		}
+	}
+}
+/*
+*/
+
+------------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Rice05 {
+	public static void main( String[] args ) throws Exception {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			//	= 의 오른쪽이 먼저 동작. 이때 에러가 나면 대입은 안됨. null 값인 채로 finally 
+			conn = DriverManager.getConnection("jdbc:mariadb://183.111.242.21:3306/pukyung00",
+				"pukyung00","pukyung00!!1");
+			
+			String sql = "INSERT INTO rice_T VALUES ( default, ? )";
+			stmt = conn.prepareStatement( sql );
+			stmt.setString(1,"content3");
+			stmt.executeUpdate();	// 	여기서 에러가 나면?? 반드시 close() ??
+			
+//			stmt.close();
+//			conn.close();
+		}
+		catch( Exception e ) { throw e; }	//	에러는 발생하면 뒤처리 후에 다시 던지는 경우 많다.
+		finally {
+			if( stmt != null ) stmt.close();
+			if( conn != null ) conn.close();
+		}
+	}
+}
+/*
+
+*/
+
+------------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Rice07 {
+	//	가변 파라메터 ( 찾아서 복습요망 )
+	public static int update( String sql, Object... params ) throws Exception {
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		int uc = 0;
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mariadb://183.111.242.21:3306/pukyung00",
+				"pukyung00","pukyung00!!1");
+			
+			stmt = conn.prepareStatement( sql );
+			
+			//	가변파라메터와 연동되는 부분 : 여러분들끼리 스터디 좀 하세요 ^^*
+			for( int i = 0 ; i < params.length ; i++ ) {
+				if( params[i] instanceof String ) {
+					stmt.setString(i+1,  params[i].toString() );
+				}
+				else if ( params[i] instanceof Integer ) {
+					stmt.setInt(i+1, Integer.parseInt( params[i].toString() ) );
+				}
+			}
+			uc = stmt.executeUpdate();
+		}
+		catch( Exception e ) { throw e; }
+		finally {
+			if( stmt != null ) stmt.close();
+			if( conn != null ) conn.close();
+		}
+		return uc;
+	}
+	
+	public static void main( String[] args ) throws Exception {
+		String sql = "INSERT INTO rice_T VALUES ( ?, ? )";
+		int r = update( sql, 100, "XXYY");
+		System.out.println( r );
+	}
+}
+/*
+*/
+
+------------------------------------------------------------------------------------
+
+Spring 설정관련 암기요망 사항
+1. beans , context, core + 나머지는 적당히 돌리면서 필요한거
+C:\jars\spring-context-4.1.7.RELEASE.jar
+C:\jars\spring-expression-4.1.7.RELEASE.jar
+C:\jars\spring-beans-4.1.7.RELEASE.jar
+C:\jars\spring-core-4.1.7.RELEASE.jar
+
+2. commons-logging.jar + src/설정파일
+3. src/spring.xml  
+
+------------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+</beans>
+
+------------------------------------------------------------------------------------
+
+package apple;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Rice08 {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext spring = new ClassPathXmlApplicationContext("spring.xml");
+		System.out.println( spring );
+		
+		spring.close();
+	}
+
+}
+//	스프링 기본설정
+
+------------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 
+		이걸위해서 dbcp.jar pool.jar 
+	-->
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" /> 
+		<property name="url" value="jdbc:mariadb://183.111.242.21:3306/pukyung00" /> 
+		<property name="username" value="pukyung00" /> 
+		<property name="password" value="pukyung00!!1" /> 
+	</bean>
+
+	<!--
+		spring_jdbc.jar spring_tx.jar 
+	-->
+	<bean id="jtpl" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+
+</beans>
+
+-------------------------------------------------------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 
+		이걸위해서 dbcp.jar pool.jar 
+		
+		<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 
+		이걸위해서 dbcp.jar pool.jar 
+		
+		C:\jars\commons-dbcp-1.4.jar
+		C:\jars\commons-pool-1.6.jar
+	-->
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" /> 
+		<property name="url" value="jdbc:mariadb://183.111.242.21:3306/pukyung00" /> 
+		<property name="username" value="pukyung00" /> 
+		<property name="password" value="pukyung00!!1" /> 
+	</bean>
+
+	<!--
+		spring_jdbc.jar spring_tx.jar 
+
+		C:\jars\spring-jdbc-4.1.7.RELEASE.jar
+		C:\jars\spring-tx-4.1.7.RELEASE.jar		
+	-->
+	<bean id="jtpl" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+
+</beans>
+	-->
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver" /> 
+		<property name="url" value="jdbc:mariadb://183.111.242.21:3306/pukyung00" /> 
+		<property name="username" value="pukyung00" /> 
+		<property name="password" value="pukyung00!!1" /> 
+	</bean>
+
+	<!--
+		spring_jdbc.jar spring_tx.jar 
+	-->
+	<bean id="jtpl" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds" />
+	</bean>
+
+</beans>
+
+-----------------------------------------------------------------------
+
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<body>
+	<form method="POST" action="rice11">
+		<input type="submit"/>
+	</form>
+</body>
+</html><%-- rice_10.jsp 
+	엽서:GET , 택배:POST ( 요청할때 쓰는 방식의 차이 )
+--%>
+
+-----------------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+	<!-- 
+		/rice11 로 요청하면 abcd11 이름의 서블릿이 응대한다.
+		abcd11 서블릿은 apple.Rice11 클래스이다.
+	-->
+	<servlet>
+		<servlet-name>abcd11</servlet-name>
+		<servlet-class>apple.Rice11</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>abcd11</servlet-name>
+		<url-pattern>/rice11</url-pattern>
+	</servlet-mapping>
+
+</web-app>
+-----------------------------------------------------------------------
+
+package apple;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Rice11 extends HttpServlet {
+	@Override
+	public void service(HttpServletRequest request, 
+		HttpServletResponse response) throws ServletException, IOException 
+	{
+		System.out.println( this );
+	}
+}
+
+-----------------------------------------------------------------------
+
+package apple;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+/*
+mariadb-java-client-2.5.1.jar
+
+spring-beans-4.1.7.RELEASE.jar
+spring-context-4.1.7.RELEASE.jar
+spring-core-4.1.7.RELEASE.jar
+spring-expression-4.1.7.RELEASE.jar
+
+commons-logging.jar
+src/commons-logging.properties
+
+spring.xml
+
+commons-dbcp-1.4.jar
+commons-pool-1.6.jar
+
+spring-jdbc-4.1.7.RELEASE.jar
+spring-tx-4.1.7.RELEASE.jar
+
+*/
+public class Rice11 extends HttpServlet {
+	@Override
+	public void service(HttpServletRequest request, 
+		HttpServletResponse response) throws ServletException, IOException 
+	{
+		System.out.println( this );
+		
+		AbstractApplicationContext spring = new ClassPathXmlApplicationContext("spring.xml");
+
+		JdbcTemplate jtpl = spring.getBean("jtpl",JdbcTemplate.class);
+		jtpl.update("insert into rice_T values (default,?)", "springXX" );
+		
+		spring.close();
+		
+	}
+}
+
+
+-----------------------------------------------------------------------
+
+<%@ page contentType="text/html; charset=utf-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<body>
+	<form method="POST" action="rice11">
+		<input type="text" name="content"/>
+		<input type="submit"/>
+	</form>
+</body>
+</html><%-- rice_10.jsp 
+	엽서:GET , 택배:POST ( 요청할때 쓰는 방식의 차이 )
+	
+	404 : 요청한 주소가 존재하지 않을때 ( /p0128_2/rice11 );
+--%>
+
+-----------------------------------------------------------------------
+
+package apple;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+/*
+mariadb-java-client-2.5.1.jar
+
+spring-beans-4.1.7.RELEASE.jar
+spring-context-4.1.7.RELEASE.jar
+spring-core-4.1.7.RELEASE.jar
+spring-expression-4.1.7.RELEASE.jar
+
+commons-logging.jar
+src/commons-logging.properties
+
+spring.xml
+
+commons-dbcp-1.4.jar
+commons-pool-1.6.jar
+
+spring-jdbc-4.1.7.RELEASE.jar
+spring-tx-4.1.7.RELEASE.jar
+
+*/
+public class Rice11 extends HttpServlet {
+	@Override
+	public void service(HttpServletRequest request, 
+		HttpServletResponse response) throws ServletException, IOException 
+	{
+		String content = request.getParameter("content");
+		System.out.println( this );
+		
+		AbstractApplicationContext spring = new ClassPathXmlApplicationContext("spring.xml");
+
+		JdbcTemplate jtpl = spring.getBean("jtpl",JdbcTemplate.class);
+		jtpl.update("insert into rice_T values (default,?)", content );
+		
+		spring.close();
+		
+	}
+}
