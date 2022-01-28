@@ -1,0 +1,67 @@
+JDBC 돌리려면??
+1. 드라이버 로딩
+2. Connection
+3. Statement 
+4. executeUpdate / executeQuery 
+5. 역순으로 닫아주기 
+- JDBC에서 예외처리는 중요하다. 
+
+------------------------------------------------------------------------------------------
+
+package apple;
+
+public class Rice01 {
+	public static void main( String[] args ) {
+		System.out.println("HelloWorld");
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+		}
+		catch( ClassNotFoundException e ) {
+			e.printStackTrace();
+		}
+	}
+}/*
+	throws ... 로 선언된 함수는 반드시
+	해당 예외를 처리 할 수 있는 try catch 로 싸 주어야 한다 : 문법이지!!
+	
+	에러가 발생했을때 그 사실을 알려면 e.printStackTrace(); 가 제일 만만하다.
+	
+	Class.forName("") -- 이름에 해당하는 클래스를 메모리에 올려주는 코드. 
+	mariadb 에 해당하는 jar 를 ??
+*/
+
+------------------------------------------------------------------------------------------
+
+package apple;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Rice02 {
+	public static void main( String[] args ) {
+		System.out.println("HelloWorld");
+		try {
+			Class.forName("org.mariadb.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("","","");
+			
+			conn.close();
+		}
+		catch( ClassNotFoundException e ) {
+			e.printStackTrace();
+		}
+		catch( SQLException e ) {
+			
+		}
+	}
+}
+/*	 DriverManager.getConnection() - conn.close();
+ * 
+ * getConnection() throws SQLException 
+ * - 이 함수 호출시에 SQLException 이 발생할 수 있는 사실이 명시되었다. 
+ * - 호출할 때 SQLException 을 잡을 수 있는 try catch 문 안에서 호출해야 한다.
+ * 
+ * throws XXX 로 선언된 함수는 호출 할 때 반드시 XXX 을 잡아 낼 수 있는 
+ * try catch 안에서 호출해야 한다.!!!
+
+*/
