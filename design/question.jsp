@@ -83,7 +83,7 @@ html, body {
     margin-left: 25px;
     margin-right: 25px;
     height: auto;
-    background-color: pink;
+    border: 3px solid #FFDD3D;
     padding: 30px 25px 30px 25px;
 }
 
@@ -93,18 +93,12 @@ html, body {
 }
 
 .qna_ans {
-    margin-top: 180px;
+    margin-top: 60px;
     margin-left: 25px;
     margin-right: 25px;
-    background-color: orange;
+    border: 2px solid #00CC00;
     height: auto;
     padding: 30px 25px 30px 25px;
-}
-
-.ans_button {
-    
-    left: 25px; 
-    top: 150px;
 }
 
 a {
@@ -113,19 +107,26 @@ a {
 }
 
 .ans_button {
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #00CC00;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
+	position: relative;
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #00CC00;
+	left: 25px; 
+	top: 150px;
+	border: 0;
+	padding: 10px 40px 10px 40px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.line {
+    margin: 150px 25px 0px 25px;
+    background-color: #00CC00;
+    border: solid 2px #00CC00;
 }
 
 </style>
@@ -156,6 +157,7 @@ a {
                 <br/>
             </div>
             <button class="ans_button">답변 쓰기</button>
+            <hr class="line" noshade>
             <div class="qna_ans">
                 <div>
                     답변 공간<br/>
