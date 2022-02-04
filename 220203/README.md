@@ -21,7 +21,7 @@ WEB-INF/jsp
 <br/>
 
 - view_list : 로그인 성공 시 이동되는 화면
-- id_create : 회원가입 화면
+- id_create : 회원가입 화면 <br/>
 아이디 중복 시 경고 메시지 뜨도록 구현<br/>
 
 ![image](https://user-images.githubusercontent.com/97445004/152490254-232c0dd9-4b9b-4362-a1e1-6b92f7829dc6.png)
