@@ -22,7 +22,7 @@ form 태그를 사용하여 @ModelAttribute 로 값을 받아올때 떴던 nullp
 <br/>
 
 작성자 : abc <br/>
-로그인 할때 사용한 id 값을 session 을 이용해 화면에 띄우고 list 테이블에 insert
+로그인 할때 사용한 id 값을 session 을 이용해 jsp에 넘겨 화면에 띄우고 list 테이블에 insert
 ![image](https://user-images.githubusercontent.com/97445004/152491946-b5babcb7-7c71-4a70-8570-642f8f60346a.png)
 
 <br/>
