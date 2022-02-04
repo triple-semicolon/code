@@ -1,0 +1,31 @@
+CREATE TABLE login_T(
+	username VARCHAR(20) NOT NULL,
+	password VARCHAR(20) NOT NULL,
+	operator CHAR(1)
+);
+
+INSERT INTO login_T VALUES('user', '1234', 'N');
+
+CREATE TABLE tmp_02(
+    no INT NOT NULL auto_increment PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    title VARCHAR(50),
+    content VARCHAR(5000),
+    ofn VARCHAR(100),
+    fsn VARCHAR(100),
+	view INT,
+	recommend INT,
+	time VARCHAR(50)
+);
+
+CREATE TABLE recom_T (
+	no INT NOT NULL,
+	username VARCHAR(20) NOT NULL
+);
+
+insert into recom_T values(1, 'user');
+
+INSERT INTO tmp_02 values (default,'user','title','content','ofn','fsn',0,0, now() );
+
+ALTER TABLE login_T ADD CONSTRAINT PK_login_username PRIMARY KEY(username);
+ALTER TABLE tmp_02 ADD CONSTRAINT FK_temp_02_username FOREIGN KEY(username) REFERENCES login_T(username);
