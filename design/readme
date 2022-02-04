@@ -15,5 +15,10 @@ gong_menu.jsp : 공지 목록 화면
 gongji.jsp : 공지 개별 화면 -- 디자인 고민중 제작예정
 
 anything.jsp : 잡담 목록 화면
+any.jsp : 잡담 개별 화면
 
-thismonth_a : 이달의 활동왕 목록 화면 -- 디자인 고민중
+thismonth_a.jsp : 이달의 활동왕 목록 화면
+
+make_question.jsp : 글쓰기 화면
+
+user_page.jsp : 마이페이지, 유저 
