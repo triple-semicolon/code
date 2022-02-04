@@ -21,7 +21,7 @@ html, body {
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
-    border-bottom: 2px #f0f0f0 solid;
+    border-bottom: 2px #00CC00 solid;
 }
 
 .menu_font {
@@ -33,18 +33,18 @@ html, body {
 
 .menu {
     width: 20%;
-    height: 900px;
+    height: 920px;
     float: left;
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin: 10px 0px 0px 0px;
     
 }
 
 .content {
     width: 80%;
-    height: 900px;
+    height: 920px;
     float: right;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
 }
 
@@ -53,76 +53,92 @@ html, body {
 }
 
 .gong {
-    margin: 20px 5px 0px 5px;
-    width: 49%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 10px;
+    width: 45%;
     height: 200px;
-    background-color: #d0a9f5;
 }
 
 .thismonth {
     margin-top: 20px;
-    width: 49%;
+    margin-left: 10px;
+    margin-right: auto;
+    width: 45%;
     height: 200px;
-    background-color: pink;
 }
 
 .title {
-    margin: 15px 5px 5px 5px;
-    background-color: skyblue;
+    margin: 10px 5px 0px 5px;
+    background-color: #FDFFF2;
+    /* #FDFFF2 */
     height: 60px;
-    width: 99%;
+    width: 98%;
+    
 }
 
 .title_sub {
-    padding: 20px 10px;
+    padding: 25px 10px 20px 10px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%
 }
 
 .title_sub2 {
-    padding: 5px 10px;
+    padding: 5px 10px 15px 10px;
+    font-weight: bold;
 }
 
 .question {
-    margin: 0px 5px 0px 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #f8f8f8;
     height: 250px;
-    width: 99%
+    width: 90%
 }
 
 .anything {
-    margin: 0px 5px 0px 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #f8f8f8;
     height: 250px;
-    width: 99%
+    width: 90%
 }
 
 .top_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px;
 }
 
 .middle_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 20px;
     margin-left: 5px;
 }
 
 .bottom_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px;
 }
 
 .list {
-    background-color: yellow;
     padding: 13px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid #FFDD3D;
+    border-left: 3px solid #00CC00;
+    background-color: #FDFFF2;
 }
 
 .list_top {
-    background-color: yellow;
     padding: 9.7px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid #FFDD3D;
+    border-left: 3px solid #00CC00;
 }
 
 a {
@@ -130,14 +146,38 @@ a {
     color: green;
 }
 
+.logout {
+    margin-top: 22.5px;
+    margin-right: 10px;
+    float: right;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FDFFF2;
+    border: 0;
+    padding: 5px 10px;
+    color: black;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.logout:hover,.logout:active,.logout:focus {
+  background: #00CC00;
+}
+
 </style>
 </head>
 <body>
-    <header class="headers" style="cursor: pointer;" onclick="location.href='main_css.jsp';">;;;</header>
+    <header class="headers">
+        <a style="color:black;" href="main_css.jsp">;;;</a>
+        <button class="logout">로그아웃</button>
+    </header>
     <div>
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font">Menu</div>
+            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
             <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
@@ -146,8 +186,10 @@ a {
         </div>
         <div class="content">
             <div class="con1">
-                <div class="gong">
-                    <div class="title_sub2" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+                <div class="gong" style="margin-bottom: 15px;">
+                    <div class="title_sub2">
+                        <a href="gong_menu.jsp">공지사항</a>
+                    </div>
                     <div class="list_top">
                         <a href="gongji.jsp">공지 1</a>
                     </div>
@@ -162,7 +204,9 @@ a {
                     </div>
                 </div>
                 <div class="thismonth">
-                    <div class="title_sub2" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 어쩌구</div>
+                    <div class="title_sub2">
+                        <a href="thismonth_a.jsp">이달의 활동왕</a>
+                    </div>
                     <div class="list_top">
                         <a href="thismonth_a.jsp">유저네임</a>
                     </div>
@@ -179,7 +223,9 @@ a {
             </div>
             
             <div class="title">
-                <div class="title_sub" style="cursor: pointer;" onclick="location.href='qna.jsp';">질문</div>
+                <div class="title_sub">
+                    <a href="qna.jsp">질문</a>
+                </div>
             </div>
             <div>
                 <div class="question">
@@ -208,7 +254,9 @@ a {
             
             <div>
                 <div class="title">
-                    <div class="title_sub" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡다한 이야기</div>
+                    <div class="title_sub">
+                        <a href="anything.jsp">잡다한 이야기</a>
+                    </div>
                 </div>
             </div>
             <div>
@@ -241,6 +289,10 @@ a {
 </html>
 
 <!-- 
+title back color = #FDFFF2
+
+border: solid 3px #FFDD3D;
+
 https://happy-inside.tistory.com/91
 -- 로그인 해야 글쓰기 되는 것 예제
 

@@ -21,7 +21,7 @@ html, body {
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
-    border-bottom: 2px #f0f0f0 solid;
+    border-bottom: 2px #00CC00 solid;
 }
 
 .menu_font {
@@ -35,24 +35,24 @@ html, body {
     width: 20%;
     height: 900px;
     float: left;
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin: 10px 0px 0px 0px;
 }
 
 .top_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px; 
 }
 
 .middle_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 20px;
     margin-left: 5px; 
 }
 
 .bottom_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px; 
 }
@@ -61,7 +61,7 @@ html, body {
     width: 80%;
     height: 900px;
     float: right;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
 }
 
@@ -73,16 +73,17 @@ html, body {
 }
 
 .any_list {
-    margin-left: 25px;
-    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     height: 80%;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
 }
 
 .list {
-    background-color: yellow;
     padding: 13px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid #FFDD3D;
+    border-left: 3px solid #00CC00;
 }
 
 a {
@@ -90,14 +91,42 @@ a {
     color: green;
 }
 
+.con1 {
+    display: flex;
+}
+
+.q_button {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    top: 20px;
+    outline: 0;
+    background: #00CC00;
+    border: 0;
+    padding: 10px 17px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.q_button:hover,.q_button:active,.q_button:focus {
+  background: #43A047;
+}
+
+
 </style>
 </head>
 <body>
-    <header class="headers" style="cursor: pointer;" onclick="location.href='main_css.jsp';">;;;</header>
+    <header class="headers">
+        <a style="color:black;" href="main_css.jsp">;;;</a>
+    </header>
     <div>
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font">Menu</div>
+            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
             <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
@@ -105,7 +134,14 @@ a {
             <div class="bottom_menu" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
-            <h4 class="con_menu_font">잡다한 이야기</h4>
+            <div class="con1">
+                <div>
+                <h4 class="con_menu_font">잡다한 이야기</h4>
+                </div>
+                <div style="margin-left: auto; margin-right: 40px;">
+                    <button class="q_button" style="cursor: pointer;" onclick="location.href='make_question.jsp';">글쓰기</button>
+                </div>
+            </div>
             <div class="any_list">
                 <div class="list">
                     <a href="any.jsp">잡담 1</a>

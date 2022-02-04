@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-<title>;;;</title>
+<title>;;; - 마이페이지</title>
 <style type="text/css">
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
@@ -33,7 +33,7 @@ html, body {
 
 .menu {
     width: 20%;
-    height: 900px;
+    height: 920px;
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
@@ -59,7 +59,7 @@ html, body {
 
 .content {
     width: 80%;
-    height: 900px;
+    height: 920px;
     float: right;
     background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
@@ -72,26 +72,85 @@ html, body {
     margin-left: 25px; 
 }
 
-.gong_list {
+.this_list {
     margin-left: 25px;
     width: 94%;
     height: 80%;
-    border: 5px solid #FFDD3D;
+    background-color: #FDFFF2;
 }
 
-.gong_con {
-    padding: 20px;
-}
-
-.gong_back {
-    margin-top: 25px;
+.this_list2 {
     margin-left: 25px;
     width: 94%;
+    margin-bottom: 10px;
+}
+
+.con1 {
+    display: flex;
+}
+
+.list {
+    padding: 13px 10px;
+    border: 1px solid #FFDD3D;
+    border-left: 3px solid #00CC00;
+    border-right: 3px solid #00CC00;
+}
+
+.a_king {
+    width: 45%;
+    /*border: 3px solid #FFDD3D;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.q_king {
+    width: 45%;
+    /*border: 3px solid #FFDD3D;*/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.a_king_top {
+    width: 45%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+}
+
+.q_king_top {
+    width: 45%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
 }
 
 a {
     text-decoration: none;
     color: green;
+}
+
+.wrapper {
+  display: flex;
+  ovreflow: hidden;
+}
+
+.photo {
+    display: inline-block;
+    border: 3px solid #FFDD3D;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    background-color: white;
+}
+
+.myback {
+    background-color: #FFDD3D;
+    margin-top: 30px;
 }
 
 </style>
@@ -100,7 +159,7 @@ a {
     <header class="headers">
         <a style="color:black;" href="main_css.jsp">;;;</a>
     </header>
-    <div>
+    <div class="wrapper">
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font">Menu</div>
@@ -112,14 +171,11 @@ a {
             <div class="bottom_menu" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
-            <h4 class="con_menu_font">공지 1</h4>
-            <div class="gong_list">
-                <div class="gong_con">
-                    음 디자인 고민고민
-                </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <img src="images/ts.png" class="photo">
             </div>
-            <div class="gong_back"  style="text-align: center;">
-                <a href="gong_menu.jsp">목록으로 돌아가기</a>
+            <div class="myback">
+                my_page
             </div>
         </div>
     </div>

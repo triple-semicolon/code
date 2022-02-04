@@ -21,7 +21,7 @@ html, body {
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
-    border-bottom: 2px #f0f0f0 solid;
+    border-bottom: 2px #00CC00 solid;
 }
 
 .menu_font {
@@ -35,24 +35,24 @@ html, body {
     width: 20%;
     height: auto;
     float: left;
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin: 10px 0px 0px 0px;
 }
 
 .top_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px; 
 }
 
 .middle_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 20px;
     margin-left: 5px; 
 }
 
 .bottom_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px; 
 }
@@ -66,7 +66,7 @@ html, body {
     width: 80%;
     height: 900px;
     float: right;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
 }
 
@@ -123,6 +123,10 @@ a {
 	cursor: pointer;
 }
 
+.ans_button:hover,.ans_button:active,.ans_button:focus {
+  background: #43A047;
+}
+
 .line {
     margin: 150px 25px 0px 25px;
     background-color: #00CC00;
@@ -132,11 +136,14 @@ a {
 </style>
 </head>
 <body>
-    <header class="headers" style="cursor: pointer;" onclick="location.href='main_css.jsp';">;;;</header>
+    <header class="headers">
+        <a style="color:black;" href="main_css.jsp">;;;</a>
+    </header>
     <div class="wrapper">
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font">Menu</div>
+            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
             <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>

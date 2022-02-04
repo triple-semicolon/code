@@ -8,6 +8,9 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
 <title>;;; - 공지사항</title>
 <style type="text/css">
+/* css 부분 */
+
+/* 폰트 다운로드 */
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 
@@ -21,7 +24,7 @@ html, body {
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
-    border-bottom: 2px #f0f0f0 solid;
+    border-bottom: 2px #00CC00 solid;
 }
 
 .menu_font {
@@ -35,24 +38,24 @@ html, body {
     width: 20%;
     height: 900px;
     float: left;
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin: 10px 0px 0px 0px;
 }
 
 .top_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px; 
 }
 
 .middle_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 20px;
     margin-left: 5px; 
 }
 
 .bottom_menu {
-    background-color: #dcdcdc;
+    background-color: #4CE564;
     margin-top: 50px;
     margin-left: 5px; 
 }
@@ -61,7 +64,7 @@ html, body {
     width: 80%;
     height: 900px;
     float: right;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
 }
 
@@ -73,16 +76,17 @@ html, body {
 }
 
 .gong_list {
-    margin-left: 25px;
-    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
     height: 80%;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
 }
 
 .list {
-    background-color: yellow;
     padding: 13px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid #FFDD3D;
+    border-left: 3px solid #00CC00;
 }
 
 a {
@@ -93,11 +97,14 @@ a {
 </style>
 </head>
 <body>
-    <header class="headers" style="cursor: pointer;" onclick="location.href='main_css.jsp';">;;;</header>
+    <header class="headers">
+        <a style="color:black;" href="main_css.jsp">;;;</a>
+    </header>
     <div>
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font">Menu</div>
+            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
             <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
@@ -109,19 +116,19 @@ a {
             <div class="gong_list">
 	            <div class="list">
 	                <a href="gongji.jsp">공지 1</a>
-	                <a style="float: right;" href="user1">유저네임</a>
+	                <a style="float: right;" href="user_page.jsp">유저네임</a>
 	            </div>
 	            <div class="list">
                     <a href="gongji.jsp">공지 2</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <a style="float: right;" href="user_page.jsp">유저네임</a>
                 </div>
                 <div class="list">
                     <a href="gongji.jsp">공지 3</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <a style="float: right;" href="user_page.jsp">유저네임</a>
                 </div>
                 <div class="list">
                     <a href="gongji.jsp">공지 4</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <a style="float: right;" href="user_page.jsp">유저네임</a>
                 </div>
                 <div class="list">
                     <a href="gongji.jsp">공지 5</a>
