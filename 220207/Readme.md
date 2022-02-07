@@ -288,6 +288,21 @@
 ![image](https://user-images.githubusercontent.com/72788533/152753591-ac5f4e95-ea5f-445b-a3fe-ac21aa72ae43.png)
 
 
+### DB 추가
+- recomQ_T
+
+		// 추천 db -> 질문
+		CREATE TABLE recomQ_T (
+			no INT NOT NULL,
+			username VARCHAR(20) NOT NULL
+		);
 
 
+- recomA_T
 
+		// 추천 db -> 답변
+		CREATE TABLE recomA_T (
+			ans_no INT NOT NULL,
+			no INT NOT NULL,
+			username VARCHAR(20) NOT NULL
+		);
