@@ -1,4 +1,4 @@
-###java
+### java
 생성
 - RecomAVO.java : 답변 추천
 - RecomQVO.java : 질문 추천
@@ -234,11 +234,14 @@ public void recom(SpringVO pvo, String username) throws Exception {
 		mnv.setViewName("anything");
 		return mnv;
 	}
-###jsp
+### jsp
 생성
 - main.jsp
+![image](https://user-images.githubusercontent.com/72788533/152753337-5915bb4a-8a01-4bd0-9ed0-099d4eb07eb7.png)
 - thismonth_a.jsp
+![image](https://user-images.githubusercontent.com/72788533/152753404-b8a945ff-ed67-4857-ad59-bb2f0e8de7c2.png)
 - anything.jsp
+
 추가
 - view_list.jsp
 ...
@@ -248,6 +251,8 @@ public void recom(SpringVO pvo, String username) throws Exception {
     	<button>home</button>
     </form>
 ...
+![image](https://user-images.githubusercontent.com/72788533/152753558-5446b108-c1fe-4cc9-bb8d-574dba40b61f.png)
+
 -qna_view.jsp
 ...
 <div class="container">
@@ -257,6 +262,7 @@ public void recom(SpringVO pvo, String username) throws Exception {
 		<button>Question List</button>
 	</form>
 ...
+![image](https://user-images.githubusercontent.com/72788533/152753591-ac5f4e95-ea5f-445b-a3fe-ac21aa72ae43.png)
 
 
 
