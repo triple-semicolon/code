@@ -103,8 +103,8 @@ a {
     <div>
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
-            <div class="menu_font">Menu</div>
-            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+            <div class="menu_font"></div>
+            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
             <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>

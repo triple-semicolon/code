@@ -147,8 +147,8 @@ a {
     <div class="wrapper">
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
-            <div class="menu_font">Menu</div>
-            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+            <div class="menu_font"></div>
+            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
             <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
@@ -159,7 +159,7 @@ a {
             <h4 class="con_menu_font">이달의 활동왕</h4>
             <div class="this_list2 con1">
                 <div class="a_king_top">이달의 답변왕</div>
-                <div class="q_king_top">이달의 질문왕</div>
+                <div class="q_king_top">이달의 질문</div>
             </div>
             <div class="this_list con1">
                 <div class="a_king">
@@ -180,21 +180,21 @@ a {
                     <div class="list"><a href="user1">유저네임</a></div> 
                 </div>
                 <div class="q_king">
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div>
-                    <div class="list"><a href="user1">유저네임</a></div> 
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div>
+                    <div class="list"><a href="question1">질문내용</a></div> 
                 </div>
             </div>
         </div>
