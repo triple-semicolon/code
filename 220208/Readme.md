@@ -119,6 +119,13 @@
             uc = uc + jdbcTemplate.update("DELETE FROM view_T WHERE no = " + pvo.getNo());
             return uc;
         }
+	
+## 수정
+
+- SpringVO.java : 코드 수정 및 삭제
+- SpringDAO_Impl.java : 코드 수정 및 삭제
+- Ctrl.java : 일부 코드 삭제
+
 ### jsp
 
 ## 생성
@@ -134,6 +141,14 @@
 - update_com.jsp
 
 ![image](https://user-images.githubusercontent.com/72788533/152924121-60d2e336-68ce-48fb-95b5-84e2ddb29e4d.png)
+
+## 수정
+
+- qna_view.jsp
+
+![image](https://user-images.githubusercontent.com/72788533/152931000-77a7eb3e-228b-49bf-9005-1d43872b67a2.png)
+
+- update_view.jsp
 
 ### xml
 
@@ -158,4 +173,43 @@
 			<property name="comansDao" ref="comansDao"/>
 		</bean>
 	
+### DB
+
+## 생성
+- com_T
+
+		CREATE TABLE com_T(
+			no INT NOT NULL auto_increment PRIMARY KEY,
+		    username VARCHAR(50) NOT NULL,
+		    title VARCHAR(50),
+    		content VARCHAR(5000),
+			view INT,
+			time VARCHAR(50)
+		);
+		
+- comAns_T
+
+		CREATE TABLE comAns_T(
+			ans_no INT NOT NULL auto_increment PRIMARY KEY,
+    		no INT NOT NULL,
+    		username VARCHAR(50) NOT NULL,
+    		content VARCHAR(5000),
+    		recommend INT,
+    		time VARCHAR(50)
+		);
+		
+- viewCom_T
+
+		CREATE TABLE viewCom_T(
+			no INT NOT NULL,
+			username VARCHAR(20) NOT NULL
+		);
+		
+- recomCom_T
+
+		CREATE TABLE recomCom_T (
+			ans_no INT NOT NULL,
+			no INT NOT NULL,
+			username VARCHAR(20) NOT NULL
+		);
 
