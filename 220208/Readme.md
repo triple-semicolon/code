@@ -123,5 +123,31 @@
 
 ## 생성
 
-- 
+- com_list.jsp
+- com_view.jsp
+- update_com.jsp
+
+### xml
+
+## 추가
+
+- spring.xml
+	
+		<bean id="comDao" class="banana.ComDAO_Impl">
+			<property name="jdbcTemplate" ref="jtpl"/>
+		</bean>
+
+		<bean id="comansDao" class="banana.ComAnsDAO_Impl">
+			<property name="jdbcTemplate" ref="jtpl"/>
+		</bean>
+	
+		<bean class="banana.Ctrl">
+			<property name="springDao" ref="springDao"/>
+			<property name="answerDao" ref="answerDao"/>
+			<property name="loginDao" ref="loginDao"/>
+			<property name="noticeDao" ref="noticeDao"/>
+			<property name="comDao" ref="comDao"/>
+			<property name="comansDao" ref="comansDao"/>
+		</bean>
+	
 
