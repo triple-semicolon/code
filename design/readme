@@ -20,3 +20,10 @@ thismonth_a.jsp : 이달의 활동왕 목록 화면
 make_question.jsp : 글쓰기 화면
 
 user_page.jsp : 마이페이지, 유저 (사용안함)
+
+
++ font : noto sans (노토산스)
+
++ 글쓰기 페이지 글 들어가는 곳 디자인 아직 못 했음 (ing...)
++ css 부분 주석은 main 에 거의 다 있음  주석 추가해나갈 예정 (ing...)
++ 이달의 활동왕 페이지(jsp) 외 유저네임 클릭되는 부분 수정중 (ing...)
