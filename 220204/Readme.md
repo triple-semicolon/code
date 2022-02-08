@@ -9,6 +9,7 @@
 ## 추가
 
 - Ctrl.java
+
   		private AnswerDAO answerDao = null;
 			public AnswerDAO getAnswerDao() { return answerDao; }
 			public void setAnswerDao(AnswerDAO answerDao) { this.answerDao = answerDao; }
@@ -77,6 +78,8 @@
         	    <input class="form-control" type="submit"/>
         	</div>
     	</form>
+
+![image](https://user-images.githubusercontent.com/72788533/152972008-30698a05-3274-4003-8995-8f92afb70480.png)
 
 
 ### xml
