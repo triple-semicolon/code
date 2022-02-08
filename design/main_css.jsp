@@ -196,18 +196,27 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
   background: #00CC00;
 }
 
+.photo_head {
+    margin-top: 5px;
+    margin-left: 8px;
+    height: 75px;
+    width: 75px;
+    border: 2px solid #00CC00;
+    border-radius: 50%;
+}
+
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
@@ -215,6 +224,7 @@ a {
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
             <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
+            
             <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
@@ -241,14 +251,14 @@ a {
                     <div class="title_sub2">
                         <a href="thismonth_a.jsp">이달의 활동왕</a>
                     </div>
-                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00;">
-                        <a href="thismonth_a.jsp">유저네임</a>
+                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00; color: green;">
+                        유저네임
                     </div>
-                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00;">
-                        <a href="thismonth_a.jsp">유저네임</a>
+                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00; color: green;">
+                        유저네임
                     </div>
-                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00;">
-                        <a href="thismonth_a.jsp">유저네임</a>
+                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00; color: green;">
+                        유저네임
                     </div>
                 </div>
             </div>
@@ -262,10 +272,11 @@ a {
                 <div style="width: 90%; margin-right: auto; margin-left: auto;">
                     <div class="list" style="border-right: 3px solid #00CC00;">
                         <a href="question.jsp">질문 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                         <div style="padding: 20px 10px 10px 10px;">
                             이 질문은 어쩌구 저쩌구 이러쿵 저러쿵 이거였습니다 
                             <br/>해결해주실분 구합니다 내공냠냠 금지
+                            <!-- <br/> : 줄바꿈 태그 -->
                         </div>
                     </div>
                 </div>
@@ -280,23 +291,23 @@ a {
                 <div class="question">
                     <div class="list">
                         <a href="question.jsp">질문 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="question.jsp">질문 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="question.jsp">질문 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="question.jsp">질문 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="question.jsp">질문 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                 </div>
             </div>
@@ -312,23 +323,23 @@ a {
                 <div class="anything">
                     <div class="list">
                         <a href="any.jsp">잡담 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="any.jsp">잡담 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="any.jsp">잡담 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="any.jsp">잡담 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                     <div class="list">
                         <a href="any.jsp">잡담 1</a>
-                        <a style="float: right;" href="user1">유저네임</a>
+                        <div style="float: right; color: green;">유저네임</div>
                     </div>
                 </div>
             </div>

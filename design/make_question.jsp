@@ -59,6 +59,18 @@ html, body {
     margin-left: 5px; 
 }
 
+.point_menu {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    background-color: green; 
+    padding: 10px; 
+    color: #FDFFF2;
+    font-weight: bold;
+    margin-top: 20px;
+    /* margin-left: 5px; */
+    box-shadow: 0 0 10px green;
+}
+
 .content {
     width: 80%;
     height: 920px;
@@ -68,9 +80,10 @@ html, body {
 }
 
 .con_menu_font {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size: 20px;
+    color: #0D5718;
     margin-left: 25px; 
 }
 
@@ -155,7 +168,7 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
@@ -163,12 +176,78 @@ a {
 }
 
 
+.textarea_out {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 40px;
+    border-radius: 8px;
+    background: #FDFFF2;
+    border: 5px solid #FFDD3D; 
+}
+
+.textarea {
+    width: 95%;
+    margin: 5px;
+    background: #FDFFF2;
+    border: none;
+    font-size: 15px;
+    resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
+    height: 700px;
+}
+
+.gong_back {
+    margin: 25px 25px 50px 25px;
+    width: 94%;
+}
+
+.textarea:active, .textarea:focus{
+    outline: none;
+}
+
+.textarea::-webkit-scrollbar {
+    background-color: #FDFFF2;
+}
+
+
+.textarea::-webkit-scrollbar-thumb {
+    background-color: #00CC00;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}
+
+.textarea::-webkit-scrollbar-track {
+    background-color: #FDFFF2;
+}
+
+.q_button {
+    border-radius: 5px;
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    top: 20px;
+    outline: 0;
+    background: #FFDD3D;
+    border: 0;
+    padding: 10px;
+    color: green;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.q_button:hover,.q_button:active,.q_button:focus {
+  background: #FFF53E;
+}
+
 
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
@@ -177,13 +256,29 @@ a {
             <div class="menu_font"></div>
             <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
             <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+            <div style="background-color: green;">
+                <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+            </div>
             <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
             <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
+        
         <div class="content">
+            <div class="con1">
+                <div>
+                    <h4 class="con_menu_font" style="margin-bottom: 5px;">질문하기</h4>
+                </div>
+                <div style="margin-left: auto; margin-right: 40px;">
+                    <button class="q_button" style="cursor: pointer;" onclick="글올리는jsp?..;">글 올리기</button>
+                </div>
+            </div>
             
+            <div>
+                <div class="textarea_out" style="padding: 15px;">
+	                <textarea class="textarea" id="abcd" name="ans"></textarea>
+	            </div>
+            </div>
         </div>
     </div>
 </body>

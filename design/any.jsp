@@ -120,6 +120,22 @@ html, body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+.qna_ans_main {
+    margin-top: 60px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: 3.5px solid #00CC00;
+    font-family: 'Noto Sans KR', sans-serif;
+    border-radius: 8px;
+    height: auto;
+    /* padding: 30px 25px 30px 25px; */
+}
+
+.qna_ans_user {
+    padding: 5px 15px 15px 15px;
+    height: auto;
+}
+
 a {
     text-decoration: none;
     color: green;
@@ -187,19 +203,62 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
   background: #00CC00;
 }
 
+.photo {
+    border: 1px solid #FFDD3D;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.user {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+
+.title_time {
+    font-size: 13px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: gray;
+}
+
+.textarea::-webkit-scrollbar {
+    background-color: #FDFFF2;
+}
+
+
+.textarea::-webkit-scrollbar-thumb {
+    background-color: #00CC00;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}
+
+.textarea::-webkit-scrollbar-track {
+    background-color: #FDFFF2;
+}
+
+.title_time {
+    font-size: 13px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: gray;
+}
 
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
@@ -207,6 +266,7 @@ a {
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
             <!-- <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
+            
             <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
             <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
             
@@ -218,7 +278,14 @@ a {
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
-            <h4 class="con_menu_font">배고파영</h4>
+            <div>
+                <h4 class="con_menu_font" style="margin-bottom: 5px;">배고파영</h4>
+                <div style="display: flex;">
+                    <div class="title_time" style="font-size: 13px; font-weight: bold;">사용자</div>
+                    <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">time</div>
+                </div>
+            </div>
+            
             <div class="qna_list">
                 배고파여<br/>
                 점심 뭐 드실 거에요<br/>
@@ -238,20 +305,18 @@ a {
                 <button class="ans_button">답변 남기기</button>
             </div>
             
-            <div class="qna_ans">
-                <div>
-                    밥<br/>
-                    머먹지<br/>
-                    점심 먹고 나면<br/>
-                    저녁이 걱정이고 그래<br/>
-                    ㅎㅎ<br/>
+            <div class="qna_ans_main">
+                <div class="qna_ans_user" style="display: flex;">
+                    <img src="images/ts.png" class="photo">
+                    <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
+                    <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
                 </div>
-            </div>
-            <div class="qna_ans">
-                <div>
-                    나도<br/>
-                    마라탕<br/>
-                    먹을거가태<br/>
+                <div style="padding: 15px 25px 30px 25px;">
+                    음<br/>
+                    저는 마라탕<br/>
+                    보다는 마라샹궈를<br/>
+                    더 좋아해서 그거 먹을듯요<br/>
+                    아마도?<br/>
                 </div>
             </div>
             <div class="qna_back"  style="text-align: center;">

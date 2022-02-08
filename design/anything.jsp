@@ -147,7 +147,7 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
@@ -160,7 +160,7 @@ a {
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div>
@@ -184,69 +184,69 @@ a {
                 <h4 class="con_menu_font">잡다한 이야기</h4>
                 </div>
                 <div style="margin-left: auto; margin-right: 40px;">
-                    <button class="q_button" style="cursor: pointer;" onclick="location.href='make_question.jsp';">글쓰기</button>
+                    <button class="q_button" style="cursor: pointer;" onclick="location.href='make_anything.jsp';">글쓰기</button>
                 </div>
             </div>
             <div class="any_list">
                 <div class="list">
                     <a href="any.jsp">잡담 1</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 2</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 3</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 4</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 5</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 6</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 7</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 8</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 9</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 10</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 11</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 12</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 13</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 14</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="any.jsp">잡담 15</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
             </div>
         </div>

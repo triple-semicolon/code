@@ -150,7 +150,7 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
@@ -163,7 +163,7 @@ a {
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div>
@@ -192,63 +192,63 @@ a {
             <div class="qna_list">
                 <div class="list">
                     <a href="question.jsp">질문 1</a>
-                    <a style="float: right;" href="user_page.jsp">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 2</a>
-                    <a style="float: right;" href="user_page.jsp">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 3</a>
-                    <a style="float: right;" href="user_page.jsp">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 4</a>
-                    <a style="float: right;" href="user_page.jsp">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 5</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 6</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 7</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 8</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 9</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 10</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 11</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 12</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 13</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 14</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
                 <div class="list">
                     <a href="question.jsp">질문 15</a>
-                    <a style="float: right;" href="user1">유저네임</a>
+                    <div style="float: right; color: green;">유저네임</div>
                 </div>
             </div>
         </div>

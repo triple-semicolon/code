@@ -209,18 +209,42 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
   background: #00CC00;
 }
 
+.title_time {
+    font-size: 13px;
+    margin-left: 25px;
+    margin-top: 10px;
+    color: gray;
+}
+
+.textarea::-webkit-scrollbar {
+    background-color: #FDFFF2;
+}
+
+
+.textarea::-webkit-scrollbar-thumb {
+    background-color: #00CC00;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}
+
+.textarea::-webkit-scrollbar-track {
+    background-color: #FDFFF2;
+}
+
+
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
@@ -237,7 +261,15 @@ a {
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content" style="height: auto;">
-            <h4 class="con_menu_font">html 에서 div 를 이용하여 어쩌구 저쩌구 이러쿵 저러쿵 글자수가 엄청 길면 과연 어떻게 될까용 자동 두줄이 될까용</h4>
+            <div>
+                <h4 class="con_menu_font" style="margin-bottom: 5px;">html 에서 div 를 이용하여 어쩌구 저쩌구 이러쿵 저러쿵 글자수가 엄청 길면 과연 어떻게 될까용 자동 두줄이 될까용</h4>
+                <div style="display: flex;">
+                    <div class="title_time" style="font-size: 13px; font-weight: bold;">사용자</div>
+                    <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">time</div>
+                </div>
+            </div>
+            
+            
             <div class="qna_list">
                 음... 디자인 고민<br/>
                 와... 진짜 고민되네<br/>
@@ -263,7 +295,7 @@ a {
                 <div class="qna_ans_user" style="display: flex;">
                     <img src="images/ts.png" class="photo">
                     <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
-                    <div class="user" style="font-size: 12px; margin-top: 20px;">time</div>
+                    <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
                 </div>
                 <div style="padding: 15px 25px 30px 25px;">
                     답변 공간<br/>

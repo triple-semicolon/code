@@ -132,20 +132,26 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
 }
 
 .logout:hover,.logout:active,.logout:focus {
   background: #00CC00;
 }
 
+.title_time {
+    font-size: 13px;
+    margin-left: 30px;
+    margin-top: 0px;
+    color: gray;
+}
 
 
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
@@ -163,7 +169,11 @@ a {
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
-            <h4 class="con_menu_font">공지 1</h4>
+            <div>
+                <h4 class="con_menu_font" style="margin-bottom: 5px;">공지 1</h4>
+                <h4 class="title_time" style="font-weight: normal;">time</h4>
+            </div>
+            
             <div class="gong_list">
                 <div class="gong_con">
                     음 디자인 고민고민<br/>
