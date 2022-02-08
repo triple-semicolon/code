@@ -58,6 +58,9 @@ body{
 <body>
 <div class="container">
 <!--enctype="multipart/form-data"-->
+	<q:if test="${ecode eq \"title_invalid\"}"><span>제목을 입력해주세요</span></q:if>
+	<q:if test="${ecode eq \"content_invalid\"}"><span>내용을 입력해주세요</span></q:if>
+	
 	<form method="POST" action="add_notice.do">
         <div class="form-group has-success">
             <label class="font" for="bcde">제목</label>
