@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=euc-kr"
     pageEncoding="EUC-KR"%><%@ taglib prefix="q" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>View</title>
+<title>잡담</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
@@ -11,7 +11,7 @@
 body{
     background-color:#d8d89c;
 }
-.font , table td , table th {
+.font{
     font-family:'Nanum Gothic';
     font-size: 16px;
     color:#808000;
@@ -51,20 +51,17 @@ body{
 	.font{font-size:16px;}
 	.font_table{font-size:16px;}
 }
-button{
-	float:right;
-}
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/aja/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron title">질문방</div>
+    <div class="jumbotron title">잡담</div>
     <form method="GET" action="home.do">
     	<button>home</button>
     </form>
-    <form method="GET" action="update.do">
+    <form method="GET" action="update_com.do">
     	<button>새 글쓰기</button>
     </form>
     <table class="table table-borered table-striped">
@@ -80,10 +77,10 @@ button{
             <tr>
             	<td class="font_table">${t.no}</td>
                 <td>
-                    <a href="qna.do?no=${t.no}"><span class="font_table">${t.title}</span></a>
+                    <a href="com.do?no=${t.no}"><span class="font_table">${t.title}</span></a>
                 </td>
                 <td style="text-align:center;"><span class="font_sm">(${t.username})</span></td>
-                <td class="font_table">[<a href="del.do?no=${t.no}">X</a>]</td>
+                <td class="font_table">[<a href="delCom.do?no=${t.no}">X</a>]</td>
             </tr>
         </q:forEach>
     </table>

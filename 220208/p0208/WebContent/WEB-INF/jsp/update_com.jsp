@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>View</title>
+<title>Community</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
@@ -11,7 +11,7 @@
 body{
     background-color:#d8d89c;
 }
-.font , table td , table th {
+.font{
     font-family:'Nanum Gothic';
     font-size: 16px;
     color:#808000;
@@ -51,43 +51,34 @@ body{
 	.font{font-size:16px;}
 	.font_table{font-size:16px;}
 }
-button{
-	float:right;
-}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron title">질문방</div>
-    <form method="GET" action="home.do">
-    	<button>home</button>
+<!--enctype="multipart/form-data"-->
+	<form method="POST" action="add_com.do">
+        <div class="form-group has-success">
+            <label class="font" for="bcde">제목</label>
+            <input type="text" class="form-control font" id="bcde" name="title"/>
+        </div>
+        
+        <div class="form-group has-success">
+            <label class="font" for="bcd">${username}</label>
+            <input type="hidden" name="username" value="${username}"/>
+            <!--<input type="text" class="form-control font" id="bcd" name="username"/>-->
+        </div>
+        
+        <div class="form-group has-success">
+            <label class="font" for="abcd">내용</label>
+            <textarea class="form-control font" id="abcd" name="content" rows="15"></textarea>
+        </div>
+        
+        <div class="form-group has-success">
+            <input class="form-control" type="submit"/>
+        </div>
     </form>
-    <form method="GET" action="update.do">
-    	<button>새 글쓰기</button>
-    </form>
-    <table class="table table-borered table-striped">
-        <thead>
-            <tr>
-                <td class="font_table" style="width:12%; font-weight:bold;">번호</td>
-                <td class="font_table" style="width:65%; font-weight:bold;">제목</td>
-                <td class="font_table" style="width:12%; font-weight:bold; text-align:center;">작성자</td>
-                <td class="font_table" style="font-weight:bold;">삭제</td>
-            </tr>
-        </thead>
-        <q:forEach items="${list}" var="t">
-            <tr>
-            	<td class="font_table">${t.no}</td>
-                <td>
-                    <a href="qna.do?no=${t.no}"><span class="font_table">${t.title}</span></a>
-                </td>
-                <td style="text-align:center;"><span class="font_sm">(${t.username})</span></td>
-                <td class="font_table">[<a href="del.do?no=${t.no}">X</a>]</td>
-            </tr>
-        </q:forEach>
-    </table>
-    <div><a href="login.do">로그아웃</a></div><br/>
 </div>
 </body>
 </html>

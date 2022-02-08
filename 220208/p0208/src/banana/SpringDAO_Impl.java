@@ -46,6 +46,28 @@ public class SpringDAO_Impl implements SpringDAO{
     }
     
     @Override
+    public SpringVO findBestQ() throws Exception{
+    	RowMapper<SpringVO> rowMapper = new RowMapper<SpringVO>() {
+            @Override
+            public SpringVO mapRow(ResultSet rs, int idx) throws SQLException {
+                SpringVO vo = new SpringVO();
+                vo.setNo(rs.getInt("no"));
+                vo.setUsername( rs.getString("username") );
+                vo.setTitle( rs.getString("title") );
+                vo.setContent( rs.getString("content") );
+                vo.setOfn( rs.getString("ofn"));
+                vo.setFsn( rs.getString("fsn"));
+                vo.setView(rs.getInt("view"));
+                vo.setRecommend(rs.getInt("recommend"));
+                vo.setTime( rs.getString("time"));
+                return vo;
+            }
+        };
+        SpringVO ls = jdbcTemplate.queryForObject("select * from tmp_02 where recommend = (select max(recommend) as MAX from tmp_02)", rowMapper);
+		return ls;
+    }
+    
+    @Override
 	public SpringVO findByPk(final SpringVO pvo) throws Exception {
     	RowMapper<SpringVO> rowMapper = new RowMapper<SpringVO>() {
             @Override
@@ -132,7 +154,7 @@ public class SpringDAO_Impl implements SpringDAO{
 
     @Override
     public int delByPK(SpringVO pvo) throws Exception {
-       // 질문 삭제
+    	// 질문 삭제
         int uc = jdbcTemplate.update("DELETE FROM tmp_02 WHERE no = " + pvo.getNo());
         // 질문에 달린 답변들 삭제
         uc = uc + jdbcTemplate.update("DELETE FROM tmp_03 WHERE no = " + pvo.getNo());
@@ -140,6 +162,8 @@ public class SpringDAO_Impl implements SpringDAO{
         uc = uc + jdbcTemplate.update("DELETE FROM recomQ_T WHERE no = " + pvo.getNo());
         // 질문에 대한 답변 추천 삭제
         uc = uc + jdbcTemplate.update("DELETE FROM recomA_T WHERE no = " + pvo.getNo());
+        // 질문에 대한 조회수 추천 삭제
+        uc = uc + jdbcTemplate.update("DELETE FROM view_T WHERE no = " + pvo.getNo());
         return uc;
     }
 }

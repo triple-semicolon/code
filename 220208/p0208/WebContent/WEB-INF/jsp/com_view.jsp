@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Q&A</title>
+<title>Community</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
@@ -58,27 +58,16 @@ body{
 <body>
 <div class="container">
 	<!-- Question -->
-	<div class="jumbotron title">질문과 답변</div>
-	<form method="GET" action="qna_list.do">
-		<button>Question List</button>
+	<div class="jumbotron title">잡담</div>
+	<form method="GET" action="com_list.do">
+		<button>Community List</button>
 	</form>
 	<div>${list.username}<span class="font_sm">${list.time}</span></div>
 	<div>
 		<div>${list.title}</div>
-		<q:if test="${!(empty list.fsn)&&!(empty list.ofn)}">
-			&nbsp;<a href="down.do?fsn=${list.fsn}&ofn=${list.ofn}">
-			<img src="down.svg"/></a>
-		</q:if>
 		<div>${list.content}</div>
 	</div>
 	<div>
-		<div>
-			<form method="POST" action="recomQ.do?no=${list.no}">
-				<button>추천</button>
-				<input type="hidden" name="username" value="${username}"/>
-			</form>
-			${list.recommend}
-		</div>
 		<div>
 			<span class="font_sm">조회수</span>
 			${list.view}
@@ -93,9 +82,9 @@ body{
                    	<span class="font_table">${t.content}</span>
                 </td>
                 <td style="text-align:center;"><span class="font_sm">(${t.username} / ${t.time})</span></td>
-                <td class="font_table">[<a href="del_ans.do?ans_no=${t.ans_no}&no=${list.no}">X</a>]</td>
+                <td class="font_table">[<a href="delCom_ans.do?ans_no=${t.ans_no}&no=${list.no}">X</a>]</td>
                 <td>
-					<form method="POST" action="recomA.do?ans_no=${t.ans_no}&no=${list.no}">
+					<form method="POST" action="recomCom_A.do?ans_no=${t.ans_no}&no=${list.no}">
 						<button>추천 ${t.recommend}</button>
 					</form>
 				</td>
@@ -103,7 +92,7 @@ body{
         </q:forEach>
     </table>
 	<!-- Answer_add -->
-	<form method="POST" action="add_ans.do?no=${list.no}">
+	<form method="POST" action="addCom_ans.do?no=${list.no}">
         
         <div class="form-group has-success">
             <label class="font" for="bcd">작성자</label>

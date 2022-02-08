@@ -13,7 +13,7 @@ public class Util {
     }
 	public static String uploadDir() {
 		String t = System.getProperty("os.name");
-		String upload = "/pukyung18/upload/";
+		String upload = "/pukyung10/upload/";
 		if( t.indexOf("indows") != -1 ) {
 			upload = "C:\\upload\\";
 		}
