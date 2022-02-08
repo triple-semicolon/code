@@ -80,7 +80,14 @@ body{
                     <a href="com.do?no=${t.no}"><span class="font_table">${t.title}</span></a>
                 </td>
                 <td style="text-align:center;"><span class="font_sm">(${t.username})</span></td>
-                <td class="font_table">[<a href="delCom.do?no=${t.no}">X</a>]</td>
+                <q:choose>
+                	<q:when test="${t.username eq username || operator eq \"Y\"}">
+                		<td class="font_table">[<a href="del.do?no=${t.no}">X</a>]</td>
+               		</q:when>
+               		<q:otherwise>
+               			<td>[ ]</td>
+               		</q:otherwise>
+                </q:choose>
             </tr>
         </q:forEach>
     </table>

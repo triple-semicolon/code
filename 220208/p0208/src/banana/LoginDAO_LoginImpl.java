@@ -79,7 +79,7 @@ public class LoginDAO_LoginImpl implements LoginDAO {
 		}
 		else {
 			// findBy_Id 에서 null 이면 id와 pwd 를 insert
-			jdbcTemplate.update("INSERT INTO login_T VALUES(?, ?, 'N')",Util.han( id), pwd );
+			jdbcTemplate.update("INSERT INTO login_T VALUES(?, ?, 'N')", Util.han(id), pwd );
 			return "success";
 		}
 	}

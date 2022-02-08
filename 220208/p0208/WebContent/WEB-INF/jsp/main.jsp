@@ -65,5 +65,6 @@ body{
 	<form method="GET" action="com_list.do">
 		<button>잡담</button>
 	</form>
+	<a href="notice.do">공지사항</a>
 </body>
 </html>
