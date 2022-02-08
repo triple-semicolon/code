@@ -239,6 +239,57 @@ a {
     background-color: #FDFFF2;
 }
 
+/* 삭제 css */
+.delete {
+    margin-left: 25px;
+    margin-top: 20px;
+    padding: 2px 10px 2px 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    background: none;
+}
+
+/* 추천 css 
+.wow {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    margin-left: 25px;
+    margin-top: 8px;
+    border: 3px solid #FFDD3D;
+    padding: 5px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: green;
+}
+
+.wow:hover,.wow:active,.wow:checked,.wow:focus {
+    background: #FFDD3D;
+}
+
+.wow_ans {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-left: auto;
+    margin-bottom: 30px;
+    border-radius: 0 5px 0 5px;
+    border: 3px solid #00CC00;
+    background: none;
+    padding: 2px 26px 2px 26px;
+    cursor: pointer;
+    color: green;
+    font-size: 14px;
+    margin-right: 0;
+}
+
+.wow_ans:hover,.wow_ans:active,.wow_ans:focus {
+    background: #43A047;
+}
+*/
 
 </style>
 </head>
@@ -261,14 +312,25 @@ a {
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content" style="height: auto;">
+        
+            <!-- if user==운영자, 작성자 삭제 표시 -->
+            <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+            
             <div>
                 <h4 class="con_menu_font" style="margin-bottom: 5px;">html 에서 div 를 이용하여 어쩌구 저쩌구 이러쿵 저러쿵 글자수가 엄청 길면 과연 어떻게 될까용 자동 두줄이 될까용</h4>
-                <div style="display: flex;">
+                <div style="display: flex;">                    
                     <div class="title_time" style="font-size: 13px; font-weight: bold;">사용자</div>
                     <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">time</div>
+                    <div style="display: flex;">
+                        <div class="title_time" style="cursor: pointer; font-size: 12px; margin-left: 10px; margin-top:auto; color: gray;" onclick="추천수가 올라야겠지..?">좋은질문이네요! 2</div>
+                        <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  추천수.. 따로 빼야하나?.. -->
+                    </div>
                 </div>
             </div>
             
+            <!-- 추천 버튼
+            <button class="wow" onclick="추천이되어야겠지..">좋은질문이네요!</button>
+            -->
             
             <div class="qna_list">
                 음... 디자인 고민<br/>
@@ -282,7 +344,6 @@ a {
                 <br/>
             </div>
             
-            
             <div class="textarea_out" style="padding: 10px;">
                 <textarea class="textarea" id="abcd" name="ans" rows="7"></textarea>
             </div>
@@ -292,18 +353,31 @@ a {
 
             <!-- <hr class="line" noshade> -->
             <div class="qna_ans_main">
-                <div class="qna_ans_user" style="display: flex;">
-                    <img src="images/ts.png" class="photo">
-                    <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
-                    <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
+                <div>
+                    <div style="display: flex;">
+                        <div class="qna_ans_user" style="display: flex;">
+	                        <img src="images/ts.png" class="photo">
+	                        <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
+	                        <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
+	                        <div style="display: flex;">
+	                           <div class="user" style="cursor: pointer; font-size: 12px; margin-top: 20px; color: gray;" onclick="추천수가 올라야겠지..?">좋은답변이네요! 2</div>
+	                           <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  추천수.. 따로 빼야하나?.. -->
+	                        </div>
+	                    </div>
+	                    <!-- 추천 버튼 <button class="wow_ans" onclick="추천이되어야겠지..">멋진답변이네요!</button> -->
+                    </div>
+                    
+	                <div style="padding: 15px 25px 30px 25px;">
+	                    답변 공간<br/>
+	                    답변 부탁<br/>
+	                    여기 위에<br/>
+	                    답변적는 어떠한 공간 들어갈 예정dmdkddmsfmmsf ewnonawgneowgnegn jimqmewqv me oiwvjjqiwo jimqmewqvmeoiwvjjqiwo w oeinvwenoinwgo inowangwngeoiaw ngoengonweon<br/>
+	                    아마도?<br/>
+	                </div>
                 </div>
-                <div style="padding: 15px 25px 30px 25px;">
-                    답변 공간<br/>
-                    답변 부탁<br/>
-                    여기 위에<br/>
-                    답변적는 어떠한 공간 들어갈 예정<br/>
-                    아마도?<br/>
-                </div>
+            </div>
+            <div>
+            
             </div>
             <div class="qna_back"  style="text-align: center;">
                 <a href="qna.jsp">목록으로 돌아가기</a>

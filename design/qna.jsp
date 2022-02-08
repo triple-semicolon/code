@@ -38,7 +38,7 @@ html, body {
 
 .menu {
     width: 20%;
-    height: 900px;
+    height: 950px;
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
@@ -76,7 +76,7 @@ html, body {
 
 .content {
     width: 80%;
-    height: 900px;
+    height: 950px;
     float: right;
     background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
@@ -103,6 +103,7 @@ html, body {
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
     font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
 }
 
 a {
@@ -157,7 +158,26 @@ a {
   background: #00CC00;
 }
 
+/* 삭제 css */
+.delete {
+    margin-left: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    background: none;
+}
 
+/* 제목 길어지면 말줄임표 */
+.dotdotdot {
+     width: 70%;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     color: green;
+}
 
 </style>
 </head>
@@ -190,65 +210,98 @@ a {
             </div>
             
             <div class="qna_list">
+            <!-- 한 화면에 15개 공지 : 1행 기준 .. 이것은 모든 목록 동일 -->
                 <div class="list">
-                    <a href="question.jsp">질문 1</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">질문 1 인데 제목이 길면 어떻게 되는지는 테스트를 해보지 않아서 이거 필독필독 어쩌구 저쩌구</a></div>
+                    
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 2</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">질문 2 입니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 3</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">질문또한</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 4</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">총15개입니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 5</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">한페이지15개보이게</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 6</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">일단은만들어봤고</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 7</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">페이지넘기는거는 구현 못했는데 우짜지</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 8</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">이것도 테이블 만들어야 하는것 같아서 일단 놔뒀는데</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 9</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">자세한 내용은 지난번 강사님이 주셨던 파일에 있는데</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 10</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">그 파일은 이 곳에 있읍니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 11</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">pagination_NOTE 파일을 참고해주시기 바랍니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 12</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">같이 고민해주면 너무 좋을 것 같애</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 13</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">코린이 윤교는 오늘도 웁니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 14</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">내가 디자인을 하다니 이건 기적이야</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="question.jsp">질문 15</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="question.jsp">질문 15</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
             </div>
         </div>

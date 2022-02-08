@@ -35,7 +35,7 @@ html, body {
 
 .menu {
     width: 20%;
-    height: 920px;
+    height: 950px;
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
@@ -73,7 +73,7 @@ html, body {
 
 .content {
     width: 80%;
-    height: 920px;
+    height: 950px;
     float: right;
     background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
@@ -193,7 +193,6 @@ a {
     font-size: 15px;
     resize: none;
     font-family: 'Noto Sans KR', sans-serif;
-    height: 700px;
 }
 
 .gong_back {
@@ -211,7 +210,7 @@ a {
 
 
 .textarea::-webkit-scrollbar-thumb {
-    background-color: #00CC00;
+    background-color: #FFDD3D;
     border-radius: 10px;
     background-clip: padding-box;
     border: 5px solid transparent;
@@ -276,7 +275,10 @@ a {
             
             <div>
                 <div class="textarea_out" style="padding: 15px;">
-	                <textarea class="textarea" id="abcd" name="ans"></textarea>
+                    <textarea class="textarea" id="abcd" name="ans" rows=1>제목을 입력해주세요</textarea>
+                </div>
+                <div class="textarea_out" style="padding: 15px; margin-top:20px;">
+	                <textarea class="textarea" style="height: 620px;" id="abcd" name="ans">내용을 입력해주세요</textarea>
 	            </div>
             </div>
         </div>

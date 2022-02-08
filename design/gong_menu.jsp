@@ -40,7 +40,7 @@ html, body {
 
 .menu {
     width: 20%;
-    height: 900px;
+    height: 950px;
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
@@ -78,7 +78,7 @@ html, body {
 
 .content {
     width: 80%;
-    height: 900px;
+    height: 950px;
     float: right;
     background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
@@ -105,11 +105,21 @@ html, body {
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
     font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
 }
 
 a {
     text-decoration: none;
     color: green;
+}
+
+/* 제목 길어지면 말줄임표 */
+.dotdotdot {
+     width: 70%;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     color: green;
 }
 
 .con1 {
@@ -159,6 +169,19 @@ a {
   background: #00CC00;
 }
 
+/* 삭제 css */
+.delete {
+    margin-left: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    background: none;
+}
+
+
 </style>
 </head>
 <body>
@@ -185,72 +208,107 @@ a {
                 <div>
                     <h4 class="con_menu_font">공지사항</h4>
                 </div>
+                
+                <!-- if user==운영자 공지쓰기 보이기 -->
                 <div style="margin-left: auto; margin-right: 40px;">
                     <button class="q_button" style="cursor: pointer;" onclick="location.href='make_gongji.jsp';">공지쓰기</button>
                 </div>
             </div>
             
             <div class="gong_list">
-            <!-- 한 화면에 15개 공지 : 1행 기준 -->
+            <!-- 한 화면에 15개 공지 : 1행 기준 .. 이것은 모든 목록 동일 -->
+	            
 	            <div class="list">
-	                <a href="gongji.jsp">공지 1</a>
-	                <div style="float: right; color: green;">time or day</div>
+	                <div class="dotdotdot"><a href="gongji.jsp">공지 1 인데 제목이 길면 어떻게 되는지는 테스트를 해보지 않아서 이거 필독필독 어쩌구 저쩌구</a></div>
+	                
+	                <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    
+	                <div style="margin-left: auto; color: green;">time or day</div>
 	            </div>
 	            <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">공지 2 인데 제목이 애매하게 길면 어떻게 되는지를 테스트 해볼까?</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">주의할점</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">공지는 15개 입니다</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">공지뿐만 아니라 다른 목록도 15개</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">기준입니다</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">헷갈릴수있을 것 같아 주석 달아놨습니다</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">그래도 모를수 있으니 이렇게</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">남겨봅니다</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">공지를 길게 적으면 제목이 잘리고</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">점점점 ... 으로 표시됩니다</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">삭제가되어야겠지...는 삭제 누르면 코드 동작을</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">잘 몰라서 임의로 채워놨습니다</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 1</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">jsp 이동해도 되고 동작을 넣어도 됩니다 아마도</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
                 <div class="list">
-                    <a href="gongji.jsp">공지 15</a>
-                    <div style="float: right; color: green;">time or day</div>
+                    <div class="dotdotdot"><a href="gongji.jsp">공지 15</a></div>
+                    <!-- if user==운영자.. 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">time or day</div>
                 </div>
             </div>
         </div>

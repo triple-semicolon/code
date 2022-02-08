@@ -146,6 +146,20 @@ a {
     color: gray;
 }
 
+/* 삭제 css */
+.delete {
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 2px 10px 2px 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    background: none;
+}
+
 
 </style>
 </head>
@@ -169,9 +183,13 @@ a {
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
+        
+            <!-- if user==운영자.. 삭제 표시 -->
+            <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+             
             <div>
-                <h4 class="con_menu_font" style="margin-bottom: 5px;">공지 1</h4>
-                <h4 class="title_time" style="font-weight: normal;">time</h4>
+              <h4 class="con_menu_font" style="margin-bottom: 5px;  margin-right: 30px;">공지 제목입니다 공지 제목이 길면 어떻게 될까요 이렇게 생각해보니까 공지 제목도 정해야하네요 이런이런</h4>
+              <h4 class="title_time" style="font-weight: normal;">time</h4>
             </div>
             
             <div class="gong_list">

@@ -35,7 +35,7 @@ html, body {
 
 .menu {
     width: 20%;
-    height: 900px;
+    height: 950px;
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
@@ -73,7 +73,7 @@ html, body {
 
 .content {
     width: 80%;
-    height: 900px;
+    height: 950px;
     float: right;
     background-color: #FDFFF2;
     margin: 10px 0px 0px 0px;
@@ -100,6 +100,7 @@ html, body {
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
     font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
 }
 
 a {
@@ -154,6 +155,26 @@ a {
   background: #00CC00;
 }
 
+/* 삭제 css */
+.delete {
+    margin-left: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    background: none;
+}
+
+/* 제목 길어지면 말줄임표 */
+.dotdotdot {
+     width: 70%;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     color: green;
+}
 
 
 </style>
@@ -188,65 +209,98 @@ a {
                 </div>
             </div>
             <div class="any_list">
+            <!-- 한 화면에 15개 공지 : 1행 기준 .. 이것은 모든 목록 동일 -->
                 <div class="list">
-                    <a href="any.jsp">잡담 1</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">잡담 1 인데 제목이 길면 어떻게 되는지는 테스트를 해보지 않아서 이거 필독필독 어쩌구 저쩌구</a></div>
+                    
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 2</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">잡담 2 입니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 3</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">잡담 하는 곳입니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 4</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">으어어어어어어</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 5</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">이곳도 역시나</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 6</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">15개가 최대입니다</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 7</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">그냥 게시물 15개만 적고 싶은 마음이</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 8</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">굴뚝같구요</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 9</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">왜이렇게 해도 해도</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 10</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">끝이 없을까여</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 11</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">이것이 바로 욕심이겠지</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 12</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">아에이오오우우오아아아아에에이이우오우우오우우테쓰트테스트</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 13</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">으어어어어어어</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 14</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">으어어어어어어</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
                 <div class="list">
-                    <a href="any.jsp">잡담 15</a>
-                    <div style="float: right; color: green;">유저네임</div>
+                    <div class="dotdotdot"><a href="any.jsp">잡담15</a></div>
+                    <!-- if user==운영자.작성자 삭제 표시 -->
+                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+                    <div style="margin-left: auto; color: green;">유저네임</div>
                 </div>
             </div>
         </div>

@@ -254,6 +254,21 @@ a {
     color: gray;
 }
 
+/* 삭제 css */
+.delete {
+    margin-left: 25px;
+    margin-top: 20px;
+    padding: 2px 10px 2px 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 5px;
+    background: none;
+}
+
+
 </style>
 </head>
 <body>
@@ -262,7 +277,7 @@ a {
         <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
-        <div class="menu">
+        <div class="menu" style="height: auto;">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
             <!-- <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
@@ -277,13 +292,17 @@ a {
             <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
             <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
-        <div class="content">
+        <div class="content" style="height: auto;">
+        
+            <!-- if user==운영자, 작성자 삭제 표시 -->
+            <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+            
             <div>
                 <h4 class="con_menu_font" style="margin-bottom: 5px;">배고파영</h4>
                 <div style="display: flex;">
                     <div class="title_time" style="font-size: 13px; font-weight: bold;">사용자</div>
                     <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">time</div>
-                </div>
+                </div>        
             </div>
             
             <div class="qna_list">
