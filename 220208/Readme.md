@@ -124,8 +124,16 @@
 ## 생성
 
 - com_list.jsp
+
+![image](https://user-images.githubusercontent.com/72788533/152924078-58486a93-da3e-4b86-82cd-f36415f22156.png)
+
 - com_view.jsp
+
+![image](https://user-images.githubusercontent.com/72788533/152924102-35602fa0-d630-4db3-b8dd-5ca8fd4925cb.png)
+
 - update_com.jsp
+
+![image](https://user-images.githubusercontent.com/72788533/152924121-60d2e336-68ce-48fb-95b5-84e2ddb29e4d.png)
 
 ### xml
 
