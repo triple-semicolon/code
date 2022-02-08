@@ -55,6 +55,15 @@ body{
 <script src="https://ajax.googleapis.com/aja/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<script>
+function Checkform() { 
+	if(document.getElementById("abcd").value == ""){
+		alert("내용을 입력해주세요");
+		document.getElementById("abcd").focus();
+		return false;
+	}
+}
+</script>
 <body>
 <div class="container">
 	<!-- Question -->
@@ -103,7 +112,7 @@ body{
         </q:forEach>
     </table>
 	<!-- Answer_add -->
-	<form method="POST" action="add_ans.do?no=${list.no}">
+	<form method="POST" action="add_ans.do?no=${list.no}" onSubmit="return Checkform()">
         
         <div class="form-group has-success">
             <label class="font" for="bcd">작성자</label>
@@ -111,7 +120,6 @@ body{
             <span class="form-control font">${username}</span>
             <!--<input type="text" class="form-control font" id="bcd" name="username"/> -->
         </div>
-        <q:if test="${ecode eq \"content_invalid\"}"><span>내용을 입력해주세요</span></q:if>
         <div class="form-group has-success">
             <label class="font" for="abcd">내용</label>
             <textarea class="form-control font" id="abcd" name="content" rows="5"></textarea>
