@@ -20,4 +20,18 @@
 - 공지사항 글 삭제 가능하도록 구현
 <img src="https://user-images.githubusercontent.com/97445004/152926617-5ff60fc8-1c7e-495e-b171-9a64625cc80e.png" width="800"/>
 
+---
+
+- 공지사항, qna, 잡담방 글쓰기 시 제목, 내용 없으면 INSERT 안되도록 구현
+<img src="https://user-images.githubusercontent.com/97445004/152944598-236dd2c6-8627-4bf9-a103-719eebf8c1ee.png" width="800"/>
+<img src="https://user-images.githubusercontent.com/97445004/152944635-d6c60929-62c1-48a4-bed9-f405564a2b84.png" width="800"/>
+
+- 답변 내용 없으면 INSERT 안되도록 구현
+<img src="https://user-images.githubusercontent.com/97445004/152944420-3033ff7c-507d-4941-a399-851ec5028d02.png" width="800"/>
+
+
+
+
+
+
 
