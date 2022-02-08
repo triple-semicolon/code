@@ -18,12 +18,14 @@ html, body {
     padding: 0;
 }
 
+/* 헤더 부분 */
 .headers {
     font-family: 'Hanna', fantasy;
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
     border-bottom: 2px #00CC00 solid;
+    /* border-bottom: 2px #00CC00 solid;*/
 }
 
 .menu_font {
@@ -85,7 +87,7 @@ html, body {
 }
 
 .con_menu_font {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size: 20px;
     margin-left: 25px; 
@@ -97,21 +99,24 @@ html, body {
     margin-left: 25px;
     margin-right: 25px;
     height: auto;
-    border: 3px solid #FFDD3D;
+    border: 4px solid #FFDD3D;
     padding: 30px 25px 30px 25px;
     border-radius: 8px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .qna_back {
     margin: 25px 25px 40px 25px;
     width: 94%;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .qna_ans_main {
     margin-top: 60px;
     margin-left: 25px;
     margin-right: 25px;
-    border: 2px solid #00CC00;
+    border: 3.5px solid #00CC00;
+    font-family: 'Noto Sans KR', sans-serif;
     border-radius: 8px;
     height: auto;
     /* padding: 30px 25px 30px 25px; */
@@ -122,6 +127,7 @@ html, body {
     height: auto;
 }
 
+/* 목록으로 돌아가기 */
 a {
     text-decoration: none;
     color: green;
@@ -130,7 +136,7 @@ a {
 .ans_button {
     border-radius: 5px;
 	position: relative;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-transform: uppercase;
 	outline: 0;
 	background: #00CC00;
@@ -167,6 +173,7 @@ a {
     border: none;
     font-size: 15px;
     resize: none;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .textarea:active, .textarea:focus{
@@ -183,13 +190,38 @@ a {
 .user {
     margin-top: 15px;
     margin-left: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+
+/* 로그아웃 버튼 */
+.logout {    
+    margin-top: 21px;
+    margin-right: 10px;
+    float: right;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FDFFF2;
+    border: 0;
+    padding: 5px 10px;
+    color: black;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout:hover,.logout:active,.logout:focus {
+  background: #00CC00;
 }
 
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color:black;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div class="wrapper">
         <div class="menu" style="height: auto;">
@@ -230,8 +262,8 @@ a {
             <div class="qna_ans_main">
                 <div class="qna_ans_user" style="display: flex;">
                     <img src="images/ts.png" class="photo">
-                    <div class="user" style="font-size: 18px;">사용자</div>
-                    <div class="user" style="font-size: 12px; margin-top: 18px;">time</div>
+                    <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
+                    <div class="user" style="font-size: 12px; margin-top: 20px;">time</div>
                 </div>
                 <div style="padding: 15px 25px 30px 25px;">
                     답변 공간<br/>

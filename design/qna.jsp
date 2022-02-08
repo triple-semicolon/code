@@ -18,12 +18,14 @@ html, body {
     padding: 0;
 }
 
+/* 헤더 부분 */
 .headers {
     font-family: 'Hanna', fantasy;
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
     border-bottom: 2px #00CC00 solid;
+    /* border-bottom: 2px #00CC00 solid;*/
 }
 
 .menu_font {
@@ -100,6 +102,7 @@ html, body {
     padding: 13px 10px;
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -114,7 +117,7 @@ a {
 .q_button {
     border-radius: 5px;
     position: relative;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     text-transform: uppercase;
     top: 20px;
     outline: 0;
@@ -132,11 +135,36 @@ a {
   background: #43A047;
 }
 
+/* 로그아웃 버튼 */
+.logout {    
+    margin-top: 21px;
+    margin-right: 10px;
+    float: right;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FDFFF2;
+    border: 0;
+    padding: 5px 10px;
+    color: black;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout:hover,.logout:active,.logout:focus {
+  background: #00CC00;
+}
+
+
+
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color:black;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div>
         <div class="menu">

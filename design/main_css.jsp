@@ -73,8 +73,8 @@ html, body {
     margin-top: 20px;
     margin-left: auto;
     margin-right: 10px;
-    width: 45%;
-    height: 200px;
+    width: 65%;
+    height: 160px;
 }
 
 /* 이달의활동왕 부분 전체 div 설정 */
@@ -82,8 +82,8 @@ html, body {
     margin-top: 20px;
     margin-left: 10px;
     margin-right: auto;
-    width: 45%;
-    height: 200px;
+    width: 25%;
+    height: 160px;
 }
 
 /* content 타이틀 */
@@ -165,6 +165,7 @@ html, body {
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
     background-color: #FDFFF2;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 공지사항 이달의활동왕 하위내용 리스트 */
@@ -172,6 +173,7 @@ html, body {
     padding: 9.7px 10px;
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -194,6 +196,7 @@ a {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .logout:hover,.logout:active,.logout:focus {
@@ -233,24 +236,18 @@ a {
                     <div class="list_top">
                         <a href="gongji.jsp">공지 3</a>
                     </div>
-                    <div class="list_top">
-                        <a href="gongji.jsp">공지 4</a>
-                    </div>
                 </div>
                 <div class="thismonth">
                     <div class="title_sub2">
                         <a href="thismonth_a.jsp">이달의 활동왕</a>
                     </div>
-                    <div class="list_top">
+                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00;">
                         <a href="thismonth_a.jsp">유저네임</a>
                     </div>
-                    <div class="list_top">
+                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00;">
                         <a href="thismonth_a.jsp">유저네임</a>
                     </div>
-                    <div class="list_top">
-                        <a href="thismonth_a.jsp">유저네임</a>
-                    </div>
-                    <div class="list_top">
+                    <div class="list_top" style="text-align: center; border-right: 3px solid #00CC00;">
                         <a href="thismonth_a.jsp">유저네임</a>
                     </div>
                 </div>
@@ -263,7 +260,7 @@ a {
             </div>
             <div>
                 <div style="width: 90%; margin-right: auto; margin-left: auto;">
-                    <div class="list">
+                    <div class="list" style="border-right: 3px solid #00CC00;">
                         <a href="question.jsp">질문 1</a>
                         <a style="float: right;" href="user1">유저네임</a>
                         <div style="padding: 20px 10px 10px 10px;">
@@ -274,7 +271,7 @@ a {
                 </div>
             </div>
             
-            <div class="title">
+            <div class="title" style="margin-top: 40px;">
                 <div class="title_sub">
                     <a href="qna.jsp">Q & A</a>
                 </div>

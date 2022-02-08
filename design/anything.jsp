@@ -10,6 +10,7 @@
 <style type="text/css">
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 html, body {
     margin: 0;
@@ -25,10 +26,11 @@ html, body {
 }
 
 .menu_font {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
-    font-size: 20px;
-    margin-left: 5px; 
+    font-size: 17px;
+    margin-left: 7px; 
+    color: #0D5718;
 }
 
 .menu {
@@ -57,6 +59,18 @@ html, body {
     margin-left: 5px; 
 }
 
+.point_menu {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    background-color: green; 
+    padding: 10px; 
+    color: #FDFFF2;
+    font-weight: bold;
+    margin-top: 20px;
+    /* margin-left: 5px; */
+    box-shadow: 0 0 10px green;
+}
+
 .content {
     width: 80%;
     height: 900px;
@@ -66,9 +80,10 @@ html, body {
 }
 
 .con_menu_font {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size: 20px;
+    color: #0D5718;
     margin-left: 25px; 
 }
 
@@ -84,6 +99,7 @@ html, body {
     padding: 13px 10px;
     border: 1px solid #FFDD3D;
     border-left: 3px solid #00CC00;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 a {
@@ -96,14 +112,15 @@ a {
 }
 
 .q_button {
+    border-radius: 5px;
     position: relative;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
     text-transform: uppercase;
     top: 20px;
     outline: 0;
     background: #00CC00;
     border: 0;
-    padding: 10px 17px;
+    padding: 10px 16.2px 10px 16.2px;
     color: #FFFFFF;
     font-size: 14px;
     -webkit-transition: all 0.3 ease;
@@ -115,23 +132,51 @@ a {
   background: #43A047;
 }
 
+/* 로그아웃 버튼 */
+.logout {    
+    margin-top: 21px;
+    margin-right: 10px;
+    float: right;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FDFFF2;
+    border: 0;
+    padding: 5px 10px;
+    color: black;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout:hover,.logout:active,.logout:focus {
+  background: #00CC00;
+}
+
+
 
 </style>
 </head>
 <body>
     <header class="headers">
-        <a style="color:black;" href="main_css.jsp">;;;</a>
+        <a style="color: #0D5718;" href="main_css.jsp">;;;</a>
+        <button style="color: #0D5718;" class="logout">로그아웃</button>
     </header>
     <div>
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
-            <div class="menu_font">Menu</div>
-            <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
-            <div class="top_menu" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
-            <div class="middle_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
-            <div class="middle_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
-            <div class="middle_menu" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
-            <div class="bottom_menu" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
+            <div class="menu_font"></div>
+            <!-- <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
+            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+            
+            <div style="background-color: green;">
+                <div class="point_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+            </div>
+            
+            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
+            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
             <div class="con1">
