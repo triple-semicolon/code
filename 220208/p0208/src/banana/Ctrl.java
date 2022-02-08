@@ -61,15 +61,19 @@ public class Ctrl {
 	
 	// 로그인 화면, 세션 정보 삭제
 	@RequestMapping("/login.do")
-	public String login(HttpSession session, @RequestParam(value = "ecode", required = false) String ecode,
-			HttpServletRequest request) throws Exception {
+	public ModelAndView login(HttpSession session, @RequestParam(value = "ecode", required = false) String ecode ) 
+			throws Exception {
 		if (session.getAttribute("username") != null || session.getAttribute("password") != null) {
 			session.removeAttribute("username");
 			session.removeAttribute("password");
 			session.removeAttribute("operator");
 		}
-		request.setAttribute("ecode", ecode);
-		return "view_login";
+		ModelAndView mnv = new ModelAndView();
+		mnv.setViewName("view_login");
+		if(ecode != null) {
+			mnv.addObject("ecode", ecode);
+		}
+		return mnv;
 	}
 	
 	// 로그인 아이디, 패스워드 검증
@@ -147,8 +151,14 @@ public class Ctrl {
 	
 	// 공지사항 글 입력 화면
 	@RequestMapping("/update_notice.do")
-	public String update_notice() throws Exception {
-		return "update_notice";
+	public ModelAndView update_notice(@RequestParam(value = "ecode", required = false) String ecode) 
+			throws Exception {
+		ModelAndView mnv = new ModelAndView();
+		mnv.setViewName("update_notice");
+		if(ecode != null) {
+			mnv.addObject("ecode", ecode);
+		}
+		return mnv;
 	}
 	
 	// 공지사항 글 입력 화면에서 입력된 내용 추가
@@ -156,8 +166,17 @@ public class Ctrl {
 	public String add_notice(final @ModelAttribute NoticeVO vo )
 			throws Exception {
 		System.out.println( vo.toString() );
-		noticeDao.add(vo);
-		return "redirect:notice.do";
+		
+		if( vo.getTitle() == null || vo.getTitle().equals("") ) {
+			return "redirect:update_notice.do?ecode=title_invalid";
+		}
+		else if( vo.getContent() == null || vo.getContent().equals("") ) {
+			return "redirect:update_notice.do?ecode=content_invalid";
+		}
+		else {
+			noticeDao.add(vo);
+			return "redirect:notice.do";
+		}
 	}
 	
 	// 공지사항 글 삭제
@@ -191,27 +210,28 @@ public class Ctrl {
 	@RequestMapping("/add.do")
 	public String add(final @ModelAttribute SpringVO vo )
 			throws Exception {
-		
 		System.out.println( vo.toString() );
-		
-		/*MultipartRequest mpr = new MultipartRequest(request, Util.uploadDir(), 1024 * 1024 * 16, "utf-8", null);
-		String ofn = mpr.getOriginalFileName("apple");
-		if (ofn != null) {
-			File file = mpr.getFile("apple");
-			String fsn = UUID.randomUUID().toString();
-			file.renameTo(new File(Util.uploadDir() + fsn));
-			vo.setOfn(ofn);
-			vo.setFsn(fsn);
-		}*/
-		springDao.add(vo);
-		return "redirect:qna_list.do";
+
+		if( vo.getTitle() == null || vo.getTitle().equals("") ) {
+			return "redirect:update.do?ecode=title_invalid";
+		}
+		else if( vo.getContent() == null || vo.getContent().equals("") ) {
+			return "redirect:update.do?ecode=content_invalid";
+		}
+		else {
+			springDao.add(vo);
+			return "redirect:qna_list.do";
+		}
 	}
 	
 	// 질문 등록 화면
 	@RequestMapping("/update.do")
-	public ModelAndView update() throws Exception {
+	public ModelAndView update(@RequestParam(value = "ecode", required = false) String ecode) throws Exception {
 		ModelAndView mnv = new ModelAndView();
 		mnv.setViewName("update_view");
+		if(ecode != null) {
+			mnv.addObject("ecode", ecode);
+		}
 		return mnv;
 	}
 	
@@ -228,8 +248,13 @@ public class Ctrl {
 	@RequestMapping("/add_ans.do")
 	public String ans_add(final @ModelAttribute AnswerVO avo,final @ModelAttribute SpringVO vo)
 			throws Exception {
-		answerDao.add(avo, vo);
-		return "redirect:qna.do?no="+vo.getNo();
+		if( avo.getContent() == null || avo.getContent().equals("") ) {
+			return "redirect:qna.do?no="+vo.getNo() + "&ecode=content_invalid";
+		}
+		else {
+			answerDao.add(avo, vo);
+			return "redirect:qna.do?no="+vo.getNo();
+		}
 	}
 	
 	// 답변 삭제
@@ -243,7 +268,8 @@ public class Ctrl {
 	
 	// 질문 글 목록 -> 글 선택 -> 해당 글에 내한 내용
 	@RequestMapping("/qna.do")
-	ModelAndView quest(final @ModelAttribute SpringVO vo, final @ModelAttribute AnswerVO avo, HttpSession session) throws Exception {
+	ModelAndView quest(final @ModelAttribute SpringVO vo, final @ModelAttribute AnswerVO avo, HttpSession session,
+			@RequestParam(value = "ecode", required = false) String ecode) throws Exception {
 		springDao.view_update(vo, (String)session.getAttribute("username"));
 		SpringVO ls = springDao.findByPk(vo);
 		List<AnswerVO> ans_ls = answerDao.findByFk(avo,vo);
@@ -251,6 +277,9 @@ public class Ctrl {
 		mnv.setViewName("qna_view");
 		mnv.addObject("list", ls);
 		mnv.addObject("ans_list",ans_ls);
+		if(ecode != null) {
+			mnv.addObject("ecode", ecode);
+		}
 		return mnv;
 	}
 	
@@ -291,7 +320,7 @@ public class Ctrl {
 		in.close();
 	}
 	
-//-----------------------------------------------------------------
+//---------------------------------------------------------
 	
 	// home
 	@RequestMapping("/home.do")
@@ -337,15 +366,27 @@ public class Ctrl {
 	public String add_com(final @ModelAttribute ComVO vo )
 		throws Exception {
 		System.out.println( vo.toString() );
-		comDao.add(vo);
-		return "redirect:com_list.do";
+		
+		if( vo.getTitle() == null || vo.getTitle().equals("") ) {
+			return "redirect:update_com.do?ecode=title_invalid";
+		}
+		else if( vo.getContent() == null || vo.getContent().equals("") ) {
+			return "redirect:update_com.do?ecode=content_invalid";
+		}
+		else {
+			comDao.add(vo);
+			return "redirect:com_list.do";
+		}
 	}
 
 	// 잡담 등록 화면
 	@RequestMapping("/update_com.do")
-	public ModelAndView update_com() throws Exception {
+	public ModelAndView update_com(@RequestParam(value = "ecode", required = false) String ecode) throws Exception {
 		ModelAndView mnv = new ModelAndView();
 		mnv.setViewName("update_com");
+		if(ecode != null) {
+			mnv.addObject("ecode", ecode);
+		}
 		return mnv;
 	}
 
@@ -362,8 +403,13 @@ public class Ctrl {
 	@RequestMapping("/addCom_ans.do")
 	public String ansCom_add(final @ModelAttribute ComAnsVO avo,final @ModelAttribute ComVO vo)
 			throws Exception {
-		comansDao.add(avo, vo);
-		return "redirect:com.do?no="+vo.getNo();
+		if( avo.getContent() == null || avo.getContent().equals("") ) {
+			return "redirect:com.do?no="+vo.getNo() + "&ecode=content_invalid";
+		}
+		else {
+			comansDao.add(avo, vo);
+			return "redirect:com.do?no="+vo.getNo();
+		}
 	}
 
 	// 답변 삭제
@@ -381,7 +427,8 @@ public class Ctrl {
 	}
 
 	@RequestMapping("/com.do")
-	ModelAndView Community(final @ModelAttribute ComVO vo, final @ModelAttribute ComAnsVO avo, HttpSession session) throws Exception {
+	ModelAndView Community(final @ModelAttribute ComVO vo, final @ModelAttribute ComAnsVO avo, HttpSession session,
+			@RequestParam(value = "ecode", required = false) String ecode) throws Exception {
 		comDao.view_update(vo, (String)session.getAttribute("username"));
 		ComVO ls = comDao.findByPk(vo);
 		List<ComAnsVO> ans_ls = comansDao.findByFk(avo,vo);
@@ -389,6 +436,9 @@ public class Ctrl {
 		mnv.setViewName("com_view");
 		mnv.addObject("list", ls);
 		mnv.addObject("ans_list",ans_ls);
+		if(ecode != null) {
+			mnv.addObject("ecode", ecode);
+		}
 		return mnv;
 	}
 }
