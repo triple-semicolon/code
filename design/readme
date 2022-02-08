@@ -17,9 +17,9 @@ any.jsp : 잡담 개별 화면
 
 thismonth_a.jsp : 이달의 활동왕 목록 화면
 
-make_question.jsp : 질문글쓰기 화면
-make_gongji.jsp : 공지글쓰기 화면
-make_anything.jsp : 잡담글쓰기 화면
+make_question.jsp : 질문글쓰기 화면 (Q&A 목록에서 글쓰기 버튼 클릭하면 이동)
+make_gongji.jsp : 공지글쓰기 화면 (공지 목록에서 글쓰기 버튼 클릭하면 이동)
+make_anything.jsp : 잡담글쓰기 화면 (잡담 목록에서 글쓰기 버튼 클릭하면 이동)
 
 user_page.jsp : 마이페이지, 유저 (사용안함)
 
