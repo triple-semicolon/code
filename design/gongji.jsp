@@ -47,6 +47,7 @@ html, body {
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
+    border-radius: 0 10px 0 0;
 }
 
 .top_menu {
