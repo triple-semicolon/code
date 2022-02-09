@@ -80,21 +80,14 @@ public class Ctrl {
 	@RequestMapping("/login_add.do")
 	public String login_add(@RequestParam(value = "username", required = false) String username,
 			@RequestParam(value = "password", required = false) String password, HttpSession session) throws Exception {
-		if (username == null || username.equals("")) {
-			return "redirect:login.do?ecode=id_invalid";
-		}
-		else if (password == null || password.equals("")) {
-			return "redirect:login.do?ecode=pwd_invalid";
+		LoginVO vo = loginDao.findBy_IdPwd(username, password);
+		if (vo == null) {
+			return "redirect:login.do?ecode=login_fail";
 		} else {
-			LoginVO vo = loginDao.findBy_IdPwd(username, password);
-			if (vo == null) {
-				return "redirect:login.do?ecode=login_fail";
-			} else {
-				session.setAttribute("username", vo.getUsername());
-				session.setAttribute("password", vo.getPassword());
-				session.setAttribute("operator", vo.getOperator());
-				return "redirect:home.do";
-			}
+			session.setAttribute("username", vo.getUsername());
+			session.setAttribute("password", vo.getPassword());
+			session.setAttribute("operator", vo.getOperator());
+			return "redirect:home.do";
 		}
 	}
 	
@@ -112,13 +105,6 @@ public class Ctrl {
 	@RequestMapping("/join_add.do")
 	public String join_add(@RequestParam(value = "username", required = false) String username,
 			@RequestParam(value = "password", required = false) String password) throws Exception {
-		if (username == null || username.equals("")) {
-			return "redirect:join.do?ecode=id_invalid";
-		}
-		else if (password == null || password.equals("")) {
-			return "redirect:join.do?ecode=pwd_invalid";
-		}
-
 		String res = loginDao.add_join(username, password);
 		if (res.equals("fail")) {
 			return "redirect:join.do?ecode=join_fail";
@@ -166,17 +152,8 @@ public class Ctrl {
 	public String add_notice(final @ModelAttribute NoticeVO vo )
 			throws Exception {
 		System.out.println( vo.toString() );
-		
-		if( vo.getTitle() == null || vo.getTitle().equals("") ) {
-			return "redirect:update_notice.do?ecode=title_invalid";
-		}
-		else if( vo.getContent() == null || vo.getContent().equals("") ) {
-			return "redirect:update_notice.do?ecode=content_invalid";
-		}
-		else {
-			noticeDao.add(vo);
-			return "redirect:notice.do";
-		}
+		noticeDao.add(vo);
+		return "redirect:notice.do";
 	}
 	
 	// 공지사항 글 삭제
@@ -211,17 +188,8 @@ public class Ctrl {
 	public String add(final @ModelAttribute SpringVO vo )
 			throws Exception {
 		System.out.println( vo.toString() );
-
-		if( vo.getTitle() == null || vo.getTitle().equals("") ) {
-			return "redirect:update.do?ecode=title_invalid";
-		}
-		else if( vo.getContent() == null || vo.getContent().equals("") ) {
-			return "redirect:update.do?ecode=content_invalid";
-		}
-		else {
-			springDao.add(vo);
-			return "redirect:qna_list.do";
-		}
+		springDao.add(vo);
+		return "redirect:qna_list.do";
 	}
 	
 	// 질문 등록 화면
@@ -248,13 +216,8 @@ public class Ctrl {
 	@RequestMapping("/add_ans.do")
 	public String ans_add(final @ModelAttribute AnswerVO avo,final @ModelAttribute SpringVO vo)
 			throws Exception {
-		if( avo.getContent() == null || avo.getContent().equals("") ) {
-			return "redirect:qna.do?no="+vo.getNo() + "&ecode=content_invalid";
-		}
-		else {
-			answerDao.add(avo, vo);
-			return "redirect:qna.do?no="+vo.getNo();
-		}
+		answerDao.add(avo, vo);
+		return "redirect:qna.do?no="+vo.getNo();
 	}
 	
 	// 답변 삭제
@@ -367,16 +330,8 @@ public class Ctrl {
 		throws Exception {
 		System.out.println( vo.toString() );
 		
-		if( vo.getTitle() == null || vo.getTitle().equals("") ) {
-			return "redirect:update_com.do?ecode=title_invalid";
-		}
-		else if( vo.getContent() == null || vo.getContent().equals("") ) {
-			return "redirect:update_com.do?ecode=content_invalid";
-		}
-		else {
-			comDao.add(vo);
-			return "redirect:com_list.do";
-		}
+		comDao.add(vo);
+		return "redirect:com_list.do";
 	}
 
 	// 잡담 등록 화면
@@ -403,13 +358,8 @@ public class Ctrl {
 	@RequestMapping("/addCom_ans.do")
 	public String ansCom_add(final @ModelAttribute ComAnsVO avo,final @ModelAttribute ComVO vo)
 			throws Exception {
-		if( avo.getContent() == null || avo.getContent().equals("") ) {
-			return "redirect:com.do?no="+vo.getNo() + "&ecode=content_invalid";
-		}
-		else {
-			comansDao.add(avo, vo);
-			return "redirect:com.do?no="+vo.getNo();
-		}
+		comansDao.add(avo, vo);
+		return "redirect:com.do?no="+vo.getNo();
 	}
 
 	// 답변 삭제
