@@ -325,17 +325,25 @@ a {
             </div>
             
             <div class="qna_ans_main">
-                <div class="qna_ans_user" style="display: flex;">
-                    <img src="images/ts.png" class="photo">
-                    <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
-                    <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
-                </div>
-                <div style="padding: 15px 25px 30px 25px;">
-                    음<br/>
-                    저는 마라탕<br/>
-                    보다는 마라샹궈를<br/>
-                    더 좋아해서 그거 먹을듯요<br/>
-                    아마도?<br/>
+                <div>
+                    <div style="display: flex;">
+		                <div class="qna_ans_user" style="display: flex;">
+		                    <img src="images/ts.png" class="photo">
+		                    <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
+		                    <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
+		                </div>
+		                
+		                <!-- 댓글삭제 사용자, 운영자만 보이게..-->
+                        <button class="delete" style="margin-left: auto; margin-bottom: 25px; margin-right: 20px;">삭제</button>
+	                </div>
+	                
+	                <div style="padding: 15px 25px 30px 25px;">
+	                    음<br/>
+	                    저는 마라탕<br/>
+	                    보다는 마라샹궈를<br/>
+	                    더 좋아해서 그거 먹을듯요<br/>
+	                    아마도?<br/>
+	                </div>
                 </div>
             </div>
             <div class="qna_back"  style="text-align: center;">

@@ -365,6 +365,9 @@ a {
 	                        </div>
 	                    </div>
 	                    <!-- 추천 버튼 <button class="wow_ans" onclick="추천이되어야겠지..">멋진답변이네요!</button> -->
+                        
+                        <!-- 댓글삭제 사용자, 운영자만 보이게..-->
+                        <button class="delete" style="margin-left: auto; margin-bottom: 25px; margin-right: 20px;">삭제</button>
                     </div>
                     
 	                <div style="padding: 15px 25px 30px 25px;">

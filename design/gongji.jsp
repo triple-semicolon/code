@@ -101,6 +101,22 @@ html, body {
     border: 5px solid #FFDD3D;
     border-radius: 8px;
     font-family: 'Noto Sans KR', sans-serif;
+    overflow: auto;
+}
+
+.gong_list::-webkit-scrollbar {
+    background-color: #FDFFF2;
+}
+
+.gong_list::-webkit-scrollbar-thumb {
+    background-color: #FFDD3D;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
+}
+
+.gong_list::-webkit-scrollbar-track {
+    background-color: #FDFFF2;
 }
 
 .gong_con {
@@ -194,6 +210,7 @@ a {
             
             <div class="gong_list">
                 <div class="gong_con">
+                <!-- <br/> : 줄바꿈 태그 -->
                     음 디자인 고민고민<br/>
                     짧은 글을 쓰면 짧게 나타나고 <br/>
                     긴 글을 쓰면 길게 나타나고 <br/>
@@ -202,6 +219,7 @@ a {
                     그러면 height 를 500px 로 하고<br/>
                     추가되는 길이는 auto 로 조절하고 싶은데 그게안되네<br/>
                     왜 안될까?? why~? auto 조절이 가능하면 좋을텐데~~<br/>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>아이고<br/><br/>아이고<br/><br/>아이고<br/>
                 </div>
             </div>
             <div class="gong_back"  style="text-align: center; font-family: 'Noto Sans KR', sans-serif;">
