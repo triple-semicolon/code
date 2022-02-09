@@ -74,10 +74,6 @@ function Checkform() {
 	<div>${list.username}<span class="font_sm">${list.time}</span></div>
 	<div>
 		<div>${list.title}</div>
-		<q:if test="${!(empty list.fsn)&&!(empty list.ofn)}">
-			&nbsp;<a href="down.do?fsn=${list.fsn}&ofn=${list.ofn}">
-			<img src="down.svg"/></a>
-		</q:if>
 		<div>${list.content}</div>
 	</div>
 	<div>

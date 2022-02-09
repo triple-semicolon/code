@@ -33,8 +33,6 @@ public class SpringDAO_Impl implements SpringDAO{
                 vo.setUsername( rs.getString("username"));
                 vo.setTitle( rs.getString("title"));
                 vo.setContent( rs.getString("content"));
-                vo.setOfn( rs.getString("ofn") );
-                vo.setFsn( rs.getString("fsn"));
                 vo.setView(rs.getInt("view"));
                 vo.setRecommend(rs.getInt("recommend"));
                 vo.setTime( rs.getString("time"));
@@ -55,8 +53,6 @@ public class SpringDAO_Impl implements SpringDAO{
                 vo.setUsername( rs.getString("username") );
                 vo.setTitle( rs.getString("title") );
                 vo.setContent( rs.getString("content") );
-                vo.setOfn( rs.getString("ofn"));
-                vo.setFsn( rs.getString("fsn"));
                 vo.setView(rs.getInt("view"));
                 vo.setRecommend(rs.getInt("recommend"));
                 vo.setTime( rs.getString("time"));
@@ -77,8 +73,6 @@ public class SpringDAO_Impl implements SpringDAO{
                 vo.setUsername( rs.getString("username") );
                 vo.setTitle( rs.getString("title") );
                 vo.setContent( rs.getString("content") );
-                vo.setOfn( rs.getString("ofn"));
-                vo.setFsn( rs.getString("fsn"));
                 vo.setView(rs.getInt("view"));
                 vo.setRecommend(rs.getInt("recommend"));
                 vo.setTime( rs.getString("time"));
@@ -144,11 +138,9 @@ public class SpringDAO_Impl implements SpringDAO{
                 stmt.setString( 1, Util.han(pvo.getUsername()) );
                 stmt.setString( 2, Util.han(pvo.getTitle()) );
                 stmt.setString( 3, Util.han(pvo.getContent()) );
-                stmt.setString( 4, pvo.getOfn() );
-                stmt.setString( 5, pvo.getFsn() );
             }
         };
-        int uc = jdbcTemplate.update("INSERT INTO tmp_02 VALUES (default,?,?,?,?,?,0,0, now())", pss );
+        int uc = jdbcTemplate.update("INSERT INTO tmp_02 VALUES (default,?,?,?,0,0, now())", pss );
         return uc;
     }
 

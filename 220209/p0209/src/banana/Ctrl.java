@@ -260,38 +260,26 @@ public class Ctrl {
 		return "redirect:qna.do?no=" + vo.getNo();
 	}
 
-	@RequestMapping("/down.do")
-	public void down(@RequestParam("fsn") String fsn, @RequestParam("ofn") String ofn, HttpServletResponse response)
-			throws Exception {
-		if (fsn.equals("fsn") || fsn == null) {
-			fsn = "down.svg";
-		}
-		InputStream in = new FileInputStream(Util.uploadDir() + fsn);
-
-		response.setContentType("application/octet");
-		response.setHeader("content-disposition", "attachment;filename=" + ofn);
-
-		OutputStream out2 = response.getOutputStream();
-		int len = 0;
-		byte[] buf = new byte[1024];
-
-		while ((len = in.read(buf)) != -1) {
-			out2.write(buf, 0, len);
-			out2.flush();
-		}
-		out2.close();
-		in.close();
-	}
-	
 //---------------------------------------------------------
 	
 	// home
 	@RequestMapping("/home.do")
 	public ModelAndView main() throws Exception {
+		List<NoticeVO> notice = noticeDao.findAll();
+		SpringVO month_q = springDao.findBestQ();
+		List<AnswerVO> month_king = answerDao.findAll();
+		List<SpringVO> ques = springDao.findAll();
+		List<ComVO> com = comDao.findAll();
 		ModelAndView mnv = new ModelAndView();
 		mnv.setViewName("main");
+		mnv.addObject("notice", notice);
+		mnv.addObject("month_q", month_q);
+		mnv.addObject("month_king", month_king);
+		mnv.addObject("ques", ques);
+		mnv.addObject("com", com);
 		return mnv;
 	}
+
 //----------------------------------------------------------		
 	// 이달의 활동왕
 	@RequestMapping("/month_act.do")
