@@ -23,6 +23,7 @@ make_anything.jsp : 잡담글쓰기 화면 (잡담 목록에서 글쓰기 버튼
 
 user_page.jsp : 마이페이지, 유저 (사용안함)
 
++ 삭제, 추천 추가
 
 + font : noto sans (노토산스)
 
