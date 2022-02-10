@@ -274,7 +274,7 @@ a {
 							</q:when>
 							<q:otherwise>
 								<br/>
-								<div style="padding: 20px 10px 10px 10px;">없어용~,~</div>
+								<div style="padding: 20px 10px 10px 10px;">좀 더 분발하시길~,~</div>
 								<br/>
 							</q:otherwise>
 						</q:choose>
