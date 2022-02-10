@@ -224,9 +224,15 @@ public class Ctrl {
 	
 	// 질문 삭제
 	@RequestMapping("/del.do")
-	public String del(final @ModelAttribute SpringVO vo, HttpSession session) throws Exception {
+	public String del(final @ModelAttribute SpringVO vo, HttpSession session, 
+			@RequestParam(value = "del", required = false) String del) throws Exception {
 		springDao.delByPK(vo);
-		return "redirect:qna_list.do";
+		if( del.equals("return_mypage") ) {
+			return "redirect:mypage.do";
+		}
+		else {
+			return "redirect:qna_list.do";
+		}
 	}
 	
 //-----------------------------------------------------------------
@@ -358,9 +364,17 @@ public class Ctrl {
 
 	// 잡담 삭제
 	@RequestMapping("/delCom.do")
-	public String del_com(final @ModelAttribute ComVO vo, HttpSession session) throws Exception {
+	public String del_com(final @ModelAttribute ComVO vo, HttpSession session,
+			@RequestParam(value = "del", required = false) String del ) throws Exception {
 		comDao.delByPK(vo);
-		return "redirect:com_list.do";
+		if( del.equals("return_mypage") ) {
+			return "redirect:mypage.do";
+		}
+		else {
+			return "redirect:com_list.do";
+		}
+		//comDao.delByPK(vo);
+		//return "redirect:com_list.do";
 	}
 
 //----------------------------------------------------------
