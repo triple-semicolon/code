@@ -330,9 +330,9 @@ function Checkform() {
         		</div>
     		</form>
             
-            <div class="qna_ans_main">
-                <div>
-                	 <q:forEach items="${ans_list}" var="t">
+			<q:forEach items="${ans_list}" var="t">
+            	<div class="qna_ans_main">
+                	<div>
             			<div style="display: flex;">
 		                	<div class="qna_ans_user" style="display: flex;">
 		                    	<img src="images/ts.png" class="photo">
@@ -351,9 +351,9 @@ function Checkform() {
 	                	<div style="padding: 15px 25px 30px 25px;">
 	                    	${t.content }
 	                	</div>
-        			</q:forEach>
-                </div>
-            </div>
+                	</div>
+            	</div>
+			</q:forEach>
             <div class="qna_back"  style="text-align: center;">
                 <a href="com_list.do">목록으로 돌아가기</a>
             </div>
