@@ -80,6 +80,25 @@ public class AnswerDAO_Impl implements AnswerDAO{
         AnswerVO ls = jdbcTemplate.queryForObject("select * from tmp_03 where ans_no="+pvo.getAns_no(), rowMapper);
 		return ls;
 	}
+	
+	@Override
+	public List<AnswerVO> findByUserName(String username) throws Exception {
+		RowMapper<AnswerVO> rowMapper = new RowMapper<AnswerVO>() {
+            @Override
+            public AnswerVO mapRow(ResultSet rs, int idx) throws SQLException {
+            	AnswerVO vo = new AnswerVO();
+            	vo.setAns_no(rs.getInt("ans_no"));
+            	vo.setNo(rs.getInt("no"));
+            	vo.setUsername(rs.getString("username"));
+            	vo.setContent(rs.getString("content"));
+            	vo.setRecommend(rs.getInt("recommend"));
+                vo.setTime( rs.getString("time"));
+                return vo;
+            }
+        };
+        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM tmp_03 WHERE username = ? ORDER BY no", rowMapper, username);
+        return ls;
+	}
 
 	@Override
 	public void recom(AnswerVO pvo, String username) throws Exception {
@@ -136,5 +155,4 @@ public class AnswerDAO_Impl implements AnswerDAO{
 		 uc = uc + jdbcTemplate.update("DELETE FROM recomA_T WHERE ans_no = " + pvo.getAns_no());
 	     return uc;
 	}
-
 }

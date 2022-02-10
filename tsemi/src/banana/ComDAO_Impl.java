@@ -58,6 +58,25 @@ public class ComDAO_Impl implements ComDAO{
         ComVO ls = jdbcTemplate.queryForObject("select * from com_T where no="+pvo.getNo(), rowMapper);
 		return ls;
 	}
+	
+	@Override
+	public List<ComVO> findByUserName(String username) throws Exception {
+		RowMapper<ComVO> rowMapper = new RowMapper<ComVO>() {
+            @Override
+            public ComVO mapRow(ResultSet rs, int idx) throws SQLException {
+            	ComVO vo = new ComVO();
+                vo.setNo(rs.getInt("no"));
+                vo.setUsername( rs.getString("username"));
+                vo.setTitle( rs.getString("title"));
+                vo.setContent( rs.getString("content"));
+                vo.setView(rs.getInt("view"));
+                vo.setTime( rs.getString("time"));
+                return vo;
+            }
+        };
+        List<ComVO> ls = jdbcTemplate.query("select * from com_T WHERE username = ? ORDER BY no DESC", rowMapper, username);
+        return ls;
+	}
 
 	@Override
 	public void view_update(ComVO pvo, String username) throws Exception {
@@ -106,5 +125,4 @@ public class ComDAO_Impl implements ComDAO{
         uc = uc + jdbcTemplate.update("DELETE FROM viewCom_T WHERE no = " + pvo.getNo());
         return uc;
 	}
-
 }

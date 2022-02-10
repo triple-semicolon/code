@@ -116,9 +116,19 @@ public class Ctrl {
 	
 	// 마이페이지 구현하고 싶으나 시간 부족~~
 	@RequestMapping("/mypage.do")
-	public ModelAndView mypage() throws Exception {
+	public ModelAndView mypage(HttpSession session) throws Exception {
+		String username = (String)session.getAttribute("username");
+		List<SpringVO> ques = springDao.findByUserName(username);
+		List<AnswerVO> q_ans = answerDao.findByUserName(username);
+		List<ComVO> com = comDao.findByUserName(username);
+		List<ComAnsVO> com_ans = comansDao.findByUserName(username);
+		
 		ModelAndView mnv = new ModelAndView();
 		mnv.setViewName("user_page");
+		mnv.addObject("ques", ques);
+		mnv.addObject("q_ans", q_ans);
+		mnv.addObject("com", com);
+		mnv.addObject("com_ans", com_ans);
 		return mnv;
 	}
 	

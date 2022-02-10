@@ -95,6 +95,26 @@ public class SpringDAO_Impl implements SpringDAO{
 	}
     
     @Override
+	public List<SpringVO> findByUserName(String username) throws Exception {
+    	RowMapper<SpringVO> rowMapper = new RowMapper<SpringVO>() {
+            @Override
+            public SpringVO mapRow(ResultSet rs, int idx) throws SQLException {
+                SpringVO vo = new SpringVO();
+                vo.setNo(rs.getInt("no"));
+                vo.setUsername( rs.getString("username"));
+                vo.setTitle( rs.getString("title"));
+                vo.setContent( rs.getString("content"));
+                vo.setView(rs.getInt("view"));
+                vo.setRecommend(rs.getInt("recommend"));
+                vo.setTime( rs.getString("time"));
+                return vo;
+            }
+        };
+        List<SpringVO> ls = jdbcTemplate.query("select * from tmp_02 WHERE username=? ORDER BY no DESC", rowMapper, username);
+        return ls;
+	}
+    
+    @Override
 	public void view_update(SpringVO pvo, String username) throws Exception {
     	RowMapper<ViewVO> rm = new RowMapper<ViewVO>() {
 			@Override

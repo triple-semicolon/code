@@ -60,6 +60,25 @@ public class ComAnsDAO_Impl implements ComAnsDAO{
         ComAnsVO ls = jdbcTemplate.queryForObject("select * from comAns_T where ans_no="+pvo.getAns_no(), rowMapper);
 		return ls;
 	}
+	
+	@Override
+	public List<ComAnsVO> findByUserName(String username) throws Exception {
+		RowMapper<ComAnsVO> rowMapper = new RowMapper<ComAnsVO>() {
+            @Override
+            public ComAnsVO mapRow(ResultSet rs, int idx) throws SQLException {
+            	ComAnsVO vo = new ComAnsVO();
+            	vo.setAns_no(rs.getInt("ans_no"));
+            	vo.setNo(rs.getInt("no"));
+            	vo.setUsername(rs.getString("username"));
+            	vo.setContent(rs.getString("content"));
+            	vo.setRecommend(rs.getInt("recommend"));
+                vo.setTime( rs.getString("time"));
+                return vo;
+            }
+        };
+        List<ComAnsVO> ls = jdbcTemplate.query("SELECT * FROM comAns_T WHERE username=? ORDER BY no DESC", rowMapper, username);
+        return ls;
+	}
 
 	@Override
 	public void recom(ComAnsVO pvo, String username) throws Exception {
@@ -114,5 +133,4 @@ public class ComAnsDAO_Impl implements ComAnsDAO{
 		uc = uc + jdbcTemplate.update("DELETE FROM recomCom_T WHERE ans_no = " + pvo.getAns_no());
 	    return uc;
 	}
-
 }

@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"%><%@ taglib prefix="q" uri="http://java.sun.com/jsp/jstl/core" %>
     
     
 <!DOCTYPE html>
@@ -273,63 +273,50 @@ a {
             </div>
             <div class="myback">
                 my_page
-            </div>
-            
-           <div class="title" style="margin-top: 40px;">
-                <div class="title_sub">
-                    <a href="qna.jsp">내가 쓴 글</a>
-                </div>
-            </div>
-            <div>
-                <div class="question">
-                    <div class="list">
-                        <a href="question.jsp">질문 1</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">질문 1</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">질문 1</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">질문 1</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">질문 1</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                </div>
             </div> 
-            
-            <div class="title" style="margin-top: 40px;">
-                <div class="title_sub">
-                    <a href="qna.jsp">내가 쓴 답변</a>
-                </div>
-            </div>
-            <div>
-                <div class="question">
-                    <div class="list">
-                        <a href="question.jsp">답변 1</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">답변 2</a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">답변 3 </a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                    <div class="list">
-                        <a href="question.jsp">답변 4 </a>
-                        <div style="float: right; color: green;">시간</div>
-                    </div>
-                </div>
-            </div> 
+                
+			<div class="title_sub2">
+				<a href="notice.do">내가 쓴 질문</a>
+			</div>
+			<q:forEach items="${ques}" end="2" var="t">
+				<div class="list_top">
+					<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.title}</a></div>
+				</div>
+			</q:forEach> 
+			
+			<div class="title_sub2">
+				<a href="notice.do">내가 쓴 질문답변</a>
+			</div>
+			<q:forEach items="${q_ans}" end="2" var="t">
+				<div class="list_top">
+					<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.content}</a></div>
+				</div>
+			</q:forEach> 
+			
+			<div class="title_sub2">
+				<a>----------------------------------------------------------------------</a><br/>
+				<a>----------------------------------------------------------------------</a><br/>
+				<a>----------------------------------------------------------------------</a>
+			</div>
+			
+			<div class="title_sub2">
+				<a href="notice.do">내가 쓴 잡담</a>
+			</div>
+			<q:forEach items="${com}" end="2" var="t">
+				<div class="list_top">
+					<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.title}</a></div>
+				</div>
+			</q:forEach> 
+			
+			<div class="title_sub2">
+				<a href="notice.do">내가 쓴 잡담답변</a>
+			</div>
+			<q:forEach items="${com_ans}" end="2" var="t">
+				<div class="list_top">
+					<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.content}</a></div>
+				</div>
+			</q:forEach>         
+
         </div>     
     </div>
 </body>
