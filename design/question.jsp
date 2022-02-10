@@ -138,6 +138,7 @@ a {
     border-radius: 5px;
 	position: relative;
 	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: bold;
 	text-transform: uppercase;
 	outline: 0;
 	background: #00CC00;
@@ -146,9 +147,9 @@ a {
 	top: auto;
 	bottom: auto;
 	border: 0;
-	padding: 10px 40px 10px 40px;
+	padding: 10px 35px 10px 35px;
 	color: #FFFFFF;
-	font-size: 14px;
+	font-size: 15px;
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
 	cursor: pointer;
@@ -218,6 +219,7 @@ a {
 }
 
 .title_time {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 13px;
     margin-left: 25px;
     margin-top: 10px;
@@ -246,15 +248,15 @@ a {
     margin-top: 20px;
     padding: 2px 10px 2px 10px;
     font-family: 'Noto Sans KR', sans-serif;
-    color: red;
+    color: gray;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid gray;
     border-radius: 5px;
     background: none;
 }
 
-/* 추천 css 
+
 .wow {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
@@ -269,28 +271,30 @@ a {
     color: green;
 }
 
-.wow:hover,.wow:active,.wow:checked,.wow:focus {
+.wow:hover,.wow:active,.wow:focus {
     background: #FFDD3D;
 }
 
 .wow_ans {
     font-family: 'Noto Sans KR', sans-serif;
-    margin-left: auto;
-    margin-bottom: 30px;
-    border-radius: 0 5px 0 5px;
-    border: 3px solid #00CC00;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #00CC00;
     background: none;
-    padding: 2px 26px 2px 26px;
+    padding: 2px 20px 2px 20px;
     cursor: pointer;
     color: green;
-    font-size: 14px;
-    margin-right: 0;
+    font-weight: bold;
 }
 
 .wow_ans:hover,.wow_ans:active,.wow_ans:focus {
     background: #43A047;
+    color: #FFFFFF;
 }
-*/
+
 
 </style>
 </head>
@@ -303,14 +307,17 @@ a {
         <div class="menu" style="height: auto;">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+            <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+            
+                <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+                <div style="background-color: green;">
+                    <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+                </div>
+                <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+                <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content" style="height: auto;">
         
@@ -323,15 +330,14 @@ a {
                     <div class="title_time" style="font-size: 13px; font-weight: bold;">사용자</div>
                     <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">time</div>
                     <div style="display: flex;">
-                        <div class="title_time" style="cursor: pointer; font-size: 12px; margin-left: 10px; margin-top:auto; color: gray;" onclick="추천수가 올라야겠지..?">좋은질문이네요! 2</div>
-                        <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  추천수.. 따로 빼야하나?.. -->
+                        <div class="title_time" style="font-size: 12px; margin-left: 10px; margin-top:auto; color: gray;">조회수 3</div>
+                        <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  조회수 숫자.. 따로 빼야하나?.. -->
                     </div>
                 </div>
             </div>
             
-            <!-- 추천 버튼
-            <button class="wow" onclick="추천이되어야겠지..">좋은질문이네요!</button>
-            -->
+            <!-- 추천버튼 근데이제 숫자를 곁들인 .. 이렇게 해도 될까나?  -->
+            <button class="wow" onclick="추천이되어야겠지..">좋은질문이네요! 5</button>
             
             <div class="qna_list">
                 음... 디자인 고민<br/>
@@ -360,24 +366,23 @@ a {
 	                        <img src="images/ts.png" class="photo">
 	                        <div class="user" style="font-size: 18px; font-weight: bold;">사용자</div>
 	                        <div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">time</div>
-	                        <div style="display: flex;">
-	                           <div class="user" style="cursor: pointer; font-size: 12px; margin-top: 20px; color: gray;" onclick="추천수가 올라야겠지..?">좋은답변이네요! 2</div>
-	                           <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  추천수.. 따로 빼야하나?.. -->
-	                        </div>
+	                        
 	                    </div>
-	                    <!-- 추천 버튼 <button class="wow_ans" onclick="추천이되어야겠지..">멋진답변이네요!</button> -->
                         
                         <!-- 댓글삭제 사용자, 운영자만 보이게..-->
                         <button class="delete" style="margin-left: auto; margin-bottom: 25px; margin-right: 20px;">삭제</button>
                     </div>
                     
-	                <div style="padding: 15px 25px 30px 25px;">
+	                <div style="padding: 15px 25px 25px 25px;">
 	                    답변 공간<br/>
 	                    답변 부탁<br/>
 	                    여기 위에<br/>
 	                    답변적는 어떠한 공간 들어갈 예정dmdkddmsfmmsf ewnonawgneowgnegn jimqmewqv me oiwvjjqiwo jimqmewqvmeoiwvjjqiwo w oeinvwenoinwgo inowangwngeoiaw ngoengonweon<br/>
 	                    아마도?<br/>
 	                </div>
+	                
+	                <!-- 추천 버튼  -->
+                    <button class="wow_ans" onclick="추천이되어야겠지..">좋은답변이네요! 5</button>
                 </div>
             </div>
             <div>

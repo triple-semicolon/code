@@ -160,10 +160,10 @@ a {
 .delete {
     margin-left: auto;
     font-family: 'Noto Sans KR', sans-serif;
-    color: red;
+    color: gray;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid gray;
     border-radius: 5px;
     background: none;
 }
@@ -189,16 +189,18 @@ a {
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
-            
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+            <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+	            
+	            <div style="background-color: green;">
+	                <div class="point_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+	            </div>
+	            
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
             <div class="con1">
@@ -212,12 +214,14 @@ a {
             <div class="any_list">
             <!-- 한 화면에 15개 공지 : 1행 기준 .. 이것은 모든 목록 동일 -->
                 <div class="list">
-                    <div class="dotdotdot"><a href="any.jsp">잡담 1 인데 제목이 길면 어떻게 되는지는 테스트를 해보지 않아서 이거 필독필독 어쩌구 저쩌구</a></div>
+                    <table>
+                        <div class="dotdotdot"><a href="any.jsp">잡담 1 인데 제목이 길면 어떻게 되는지는 테스트를 해보지 않아서 이거 필독필독 어쩌구 저쩌구</a></div>
                     
-                    <!-- if user==운영자.작성자 삭제 표시 -->
-                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
-                    
-                    <div style="margin-left: auto; color: green;">유저네임</div>
+	                    <!-- if user==운영자.작성자 삭제 표시 -->
+	                    <button class="delete" onclick="삭제가되어야겠지...">삭제</button>
+	                    
+	                    <div style="margin-left: auto; color: green;">유저네임</div>
+                    </table>
                 </div>
                 <div class="list">
                     <div class="dotdotdot"><a href="any.jsp">잡담 2 입니다</a></div>

@@ -176,6 +176,7 @@ html, body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+
 a {
     text-decoration: none;
     color: green;
@@ -203,14 +204,6 @@ a {
   background: #00CC00;
 }
 
-.photo_head {
-    margin-top: 5px;
-    margin-left: 8px;
-    height: 75px;
-    width: 75px;
-    border: 2px solid #00CC00;
-    border-radius: 50%;
-}
 
 </style>
 </head>
@@ -222,14 +215,15 @@ a {
     <div class="wrapper">
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
-            <div class="menu_font"></div>
-            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
+            <div class="menu_font"></div>  
+            <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
+            </div>
         </div>
         <div class="content">
             <div class="con1">

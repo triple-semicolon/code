@@ -226,6 +226,7 @@ a {
 }
 
 .title_time {
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 13px;
     margin-left: 25px;
     margin-top: 10px;
@@ -261,14 +262,33 @@ a {
     margin-top: 20px;
     padding: 2px 10px 2px 10px;
     font-family: 'Noto Sans KR', sans-serif;
-    color: red;
+    color: gray;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid gray;
     border-radius: 5px;
     background: none;
 }
 
+.wow_ans {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #00CC00;
+    background: none;
+    padding: 2px 20px 2px 20px;
+    cursor: pointer;
+    color: green;
+    font-weight: bold;
+}
+
+.wow_ans:hover,.wow_ans:active,.wow_ans:focus {
+    background: #43A047;
+    color: #FFFFFF;
+}
 
 </style>
 </head>
@@ -281,17 +301,18 @@ a {
         <div class="menu" style="height: auto;">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
-            
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+            <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+	            
+	            <div style="background-color: green;">
+	                <div class="point_menu" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+	            </div>
+	            
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content" style="height: auto;">
         
@@ -303,6 +324,10 @@ a {
                 <div style="display: flex;">
                     <div class="title_time" style="font-size: 13px; font-weight: bold;">사용자</div>
                     <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">time</div>
+                    <div style="display: flex;">
+					    <div class="title_time" style="font-size: 12px; margin-left: 10px; margin-top:auto; color: gray;">조회수 3</div>
+					    <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  조회수 숫자.. 따로 빼야하나?.. -->
+					</div>
                 </div>        
             </div>
             
@@ -338,13 +363,15 @@ a {
                         <button class="delete" style="margin-left: auto; margin-bottom: 25px; margin-right: 20px;">삭제</button>
 	                </div>
 	                
-	                <div style="padding: 15px 25px 30px 25px;">
+	                <div style="padding: 15px 25px 25px 25px;">
 	                    음<br/>
 	                    저는 마라탕<br/>
 	                    보다는 마라샹궈를<br/>
 	                    더 좋아해서 그거 먹을듯요<br/>
 	                    아마도?<br/>
 	                </div>
+	                <!-- 추천 버튼  -->
+                    <button class="wow_ans" onclick="추천이되어야겠지..">좋은답변이네요! 5</button>
                 </div>
             </div>
             <div class="qna_back"  style="text-align: center;">

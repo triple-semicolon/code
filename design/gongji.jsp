@@ -161,6 +161,7 @@ a {
     margin-left: 30px;
     margin-top: 0px;
     color: gray;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 삭제 css */
@@ -169,10 +170,10 @@ a {
     margin-top: 20px;
     padding: 2px 10px 2px 10px;
     font-family: 'Noto Sans KR', sans-serif;
-    color: red;
+    color: gray;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid gray;
     border-radius: 5px;
     background: none;
 }
@@ -189,15 +190,18 @@ a {
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer; margin-top: 40px;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+            <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
+
+	            <div style="background-color: green;">
+	                <div class="point_menu" style="cursor: pointer; margin-top: 40px;" onclick="location.href='gong_menu.jsp';">공지사항</div>
+	            </div>
+	            
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='anything.jsp';">잡담</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='thismonth_a.jsp';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
         
