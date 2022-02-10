@@ -211,16 +211,19 @@ a {
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
-            
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
+            <div style="position:sticky; top:50px;">
+               <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='mypage.do';">마이페이지</div>
+                
+	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
+	            
+	            <div style="background-color: green;">
+	                <div class="point_menu" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
+	            </div>
+	            
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
             <h4 class="con_menu_font">이달의 활동왕</h4>
@@ -248,7 +251,7 @@ a {
 			                    </div>
 							</q:when>
 							<q:otherwise>
-								<div style="padding: 20px 10px 10px 10px;">좀 더 분발하시길~,~</div>
+								<div style="padding: 20px 10px 10px 10px;">없어용~,~</div>
 							</q:otherwise>
 						</q:choose>	
                     </div>

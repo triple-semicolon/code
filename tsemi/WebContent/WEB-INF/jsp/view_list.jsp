@@ -161,10 +161,10 @@ a {
 .delete {
     margin-left: auto;
     font-family: 'Noto Sans KR', sans-serif;
-    color: red;
+    color: gray;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid gray;
     border-radius: 5px;
     background: none;
 }
@@ -190,14 +190,17 @@ a {
     	<div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
+            <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='mypage.do';">마이페이지</div>
+                
+	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
+	            <div style="background-color: green;">
+	                <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
+	            </div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content">
             <div class="con1">

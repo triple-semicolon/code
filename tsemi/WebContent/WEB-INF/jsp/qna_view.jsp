@@ -244,15 +244,14 @@ a {
     margin-top: 20px;
     padding: 2px 10px 2px 10px;
     font-family: 'Noto Sans KR', sans-serif;
-    color: red;
+    color: gray;
     cursor: pointer;
     font-weight: bold;
-    border: 2px solid red;
+    border: 2px solid gray;
     border-radius: 5px;
     background: none;
 }
 
-/* 추천 css 
 .wow {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
@@ -267,28 +266,29 @@ a {
     color: green;
 }
 
-.wow:hover,.wow:active,.wow:checked,.wow:focus {
+.wow:hover,.wow:active,.wow:focus {
     background: #FFDD3D;
 }
 
 .wow_ans {
     font-family: 'Noto Sans KR', sans-serif;
-    margin-left: auto;
-    margin-bottom: 30px;
-    border-radius: 0 5px 0 5px;
-    border: 3px solid #00CC00;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-top: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #00CC00;
     background: none;
-    padding: 2px 26px 2px 26px;
+    padding: 2px 20px 2px 20px;
     cursor: pointer;
     color: green;
-    font-size: 14px;
-    margin-right: 0;
+    font-weight: bold;
 }
 
 .wow_ans:hover,.wow_ans:active,.wow_ans:focus {
     background: #43A047;
+    color: #FFFFFF;
 }
-*/
 
 </style>
 <script src="https://ajax.googleapis.com/aja/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -311,14 +311,16 @@ function Checkform() {
         <div class="menu" style="height: auto;">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
+	            <div style="position:sticky; top:50px;">
+	                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='mypage.do';">마이페이지</div>
+	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
+	            <div style="background-color: green;">
+	                <div class="point_menu" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
+	            </div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
+	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
+	            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
         </div>
         <div class="content" style="height: auto;">
             <q:if test="${list.username eq username || operator eq \"Y\"}">
@@ -331,13 +333,20 @@ function Checkform() {
                     <div class="title_time" style="font-size: 13px; font-weight: bold;">${list.username}</div>
                     <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">${list.time }</div>
                     <div style="display: flex;">
-                        <div class="title_time" style="cursor: pointer; font-size: 12px; margin-left: 10px; margin-top:auto; color: gray;" onclick="location.href='recomQ.do?no=${list.no}';">
-                        	좋은질문이네요! ${list.recommend}
-                        	<input type="hidden" name="username" value="${username}"/>
+                        <!-- 조회수 -->
+                        <div class="title_time" style="font-size: 12px; margin-left: 10px; margin-top:auto; color: gray;">
+                            조회수 ${list.view }
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- 추천버튼 근데이제 숫자를 곁들인 .. 이렇게 해도 될까나?  -->
+            <button class="wow" onclick="location.href='recomQ.do?no=${list.no}';">
+                좋은질문이네요! ${list.recommend}
+                <!-- button 형식으로 바꿔보았는데 input 아마 먹힐것이다... -->
+                <input type="hidden" name="username" value="${username}"/>
+            </button>
             
             <div class="qna_list">
                 ${list.content }
@@ -365,10 +374,7 @@ function Checkform() {
 		                    	<img src="images/ts.png" class="photo">
 		                    	<div class="user" style="font-size: 18px; font-weight: bold;">${t.username}</div>
 		                    	<div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">${t.time}</div>
-								<div style="display: flex;">
-	                           		<div class="user" style="cursor: pointer; font-size: 12px; margin-top: 20px; color: gray;" onclick="location.href='recomA.do?ans_no=${t.ans_no}&no=${list.no}';">
-	                           		좋은답변이네요! ${t.recommend }</div>
-	                        	</div>
+								
 		                	</div>
 		                	<q:if test="${t.username eq username || operator eq \"Y\"}">
 	                    		<button class="delete" style="margin-left: auto; margin-bottom: 25px; margin-right: 20px;" onclick="location.href='del_ans.do?ans_no=${t.ans_no}&no=${list.no}';">삭제</button>
@@ -378,6 +384,9 @@ function Checkform() {
 	                	<div style="padding: 15px 25px 30px 25px;">
 	                    	${t.content }
 	                	</div>
+	                	
+	                	<!-- 추천 버튼  -->
+                        <button class="wow_ans" onclick="location.href='recomA.do?ans_no=${t.ans_no}&no=${list.no}';">좋은답변이네요! ${t.recommend }</button>
                 	</div>
             	</div>
         	</q:forEach>
