@@ -10,7 +10,6 @@
 <style type="text/css">
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
-@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff');
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 html, body {
@@ -18,23 +17,14 @@ html, body {
     padding: 0;
 }
 
-/* 화면 길이 조절 */
-.wrapper {
-  display: flex;
-  ovreflow: hidden;
-}
-
-/* 헤더 부분 */
 .headers {
     font-family: 'Hanna', fantasy;
     font-size: 40px;
     margin: 0 10px;
     height: 50px;
     border-bottom: 2px #00CC00 solid;
-    /* border-bottom: 2px #00CC00 solid;*/
 }
 
-/* 메뉴쪽 폰트 설정 */
 .menu_font {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
@@ -43,119 +33,25 @@ html, body {
     color: #0D5718;
 }
 
-/* 메뉴 배경 div 설정 */
+
 .menu {
     width: 20%;
-    height: auto;
     float: left;
     background-color: #4CE564;
     margin: 10px 0px 0px 0px;
     border-radius: 0 10px 0 0;
 }
 
-/* content부분 배경 div 설정 */
-.content {
-    width: 80%;
-    height: 920px;
-    float: right;
-    background-color: #FDFFF2;
-    margin: 10px 0px 0px 0px;
-}
-
-/* 공지사항, 이달의 활동왕 옆으로 놓여지는 설정 */
-.con1 {
-    display: flex;
-}
-
-/* 공지사항부분 전체 div 설정 */
-.gong {
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: 10px;
-    width: 65%;
-    height: 160px;
-}
-
-/* 이달의활동왕 부분 전체 div 설정 */
-.thismonth {
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: auto;
-    width: 25%;
-    height: 160px;
-}
-
-/* content 타이틀 */
-.title {
-    margin: 10px 5px 0px 5px;
-    background-color: #FDFFF2;
-    /* #FDFFF2 */
-    height: 60px;
-    width: 98%;
-    
-}
-
-/* content 타이틀 폰트 */
-.title_sub {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: bold;
-    padding: 25px 10px 20px 10px;
-    margin-right: auto;
-    margin-left: auto;
-    width: 90%;
-}
-
-/* content 타이틀 폰트 */
-.title_sub2 {
-    padding: 5px 10px 15px 10px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: bold;
-}
-
-/* 질문부분 div */
-.question {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #f8f8f8;
-    height: 250px;
-    width: 90%
-}
-
-/* 잡담부분 div */
-.anything {
-    margin-top: 0px;
-    margin-bottom: 80px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #f8f8f8;
-    height: 250px;
-    width: 90%
-}
-
-/* 메뉴 위쪽 */
 .top_menu {
-    /* 2 : background-color: #0D5718; */
     background-color: #4CE564;
     margin-top: 50px;
-    margin-left: 5px;
+    margin-left: 5px; 
 }
 
-/* 메뉴 중간쪽 */
 .middle_menu {
-    /* 2 : background-color: #0D5718; */
     background-color: #4CE564;
     margin-top: 20px;
-    margin-left: 5px;
-}
-
-/* 메뉴 아래쪽 (깃헙) */
-.bottom_menu {
-    /* 2 : background-color: #0D5718; */
-    background-color: #4CE564;
-    margin-top: 50px;
-    margin-left: 5px;
+    margin-left: 5px; 
 }
 
 .point_menu {
@@ -170,21 +66,29 @@ html, body {
     box-shadow: 0 0 10px green;
 }
 
-/* 하위내용 리스트 */
-.list {
-    padding: 13px 10px;
-    border: 1px solid #FFDD3D;
-    border-left: 3px solid #00CC00;
-    background-color: #FDFFF2;
-    font-family: 'Noto Sans KR', sans-serif;
+.bottom_menu {
+    background-color: #4CE564;
+    margin-top: 50px;
+    margin-left: 5px; 
 }
 
-/* 공지사항 이달의활동왕 하위내용 리스트 */
-.list_top {
-    padding: 9.7px 10px;
-    border: 1px solid #FFDD3D;
-    border-left: 3px solid #00CC00;
+.content {
+    width: 80%;
+    float: right;
+    background-color: #FDFFF2;
+    margin: 10px 0px 0px 0px;
+}
+
+.con_menu_font {
     font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 25px; 
+}
+
+
+.con1 {
+    display: flex;
 }
 
 a {
@@ -192,7 +96,87 @@ a {
     color: green;
 }
 
-/* 로그아웃 버튼 */
+.wrapper {
+  display: flex;
+  ovreflow: hidden;
+}
+
+.photo {
+    display: inline-block;
+    border: 3px solid #FFDD3D;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    background-color: white;
+}
+
+.username {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.my_qna {
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: 10px;
+    width: 45%;
+    height: auto;
+}
+
+.my_ans {
+    margin-top: 60px;
+    margin-left: 10px;
+    margin-right: auto;
+    width: 45%;
+    height: auto;
+}
+
+.title_sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+    padding: 25px 10px 20px 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+
+.title_sub2 {
+    padding: 5px 2px 15px 2px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
+}
+
+.list_top {
+    padding: 9.7px 10px;
+    border: 1px solid #FFDD3D;
+    border-left: 3px solid #00CC00;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 제목 길어지면 말줄임표 */
+.dotdotdot {
+     width: 75%;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+     color: green;
+}
+
+.delete {
+    margin-left: auto;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: gray; /* red */
+    cursor: pointer;
+    font-weight: bold;
+    border: 2px solid gray; /* red */
+    border-radius: 5px;
+    background: none;
+    margin-top: 0px;
+}
+
 .logout {    
     margin-top: 21px;
     margin-right: 10px;
@@ -214,35 +198,6 @@ a {
   background: #00CC00;
 }
 
-.photo_head {
-    margin-top: 5px;
-    margin-left: 8px;
-    height: 75px;
-    width: 75px;
-    border: 2px solid #00CC00;
-    border-radius: 50%;
-}
-
-.wrapper {
-  display: flex;
-  ovreflow: hidden;
-}
-
-.photo {
-    display: inline-block;
-    border: 3px solid #FFDD3D;
-    border-radius: 50%;
-    overflow: hidden;
-    height: 200px;
-    width: 200px;
-    background-color: white;
-}
-
-.myback {
-    background-color: #FFDD3D;
-    margin-top: 30px;
-}
-
 </style>
 </head>
 <body>
@@ -254,70 +209,117 @@ a {
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <div style="background-color: green;">
-                <div class="point_menu" style="cursor: pointer; margin-top: 40px;" onclick="location.href='mypage.do';">마이페이지</div>
-            	<!--<div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='mypage.do';">마이페이지</div> -->
+            <div style="position:sticky; top:50px;">
+                <div style="background-color: green;">
+                    <div class="point_menu" style="cursor: pointer; margin-top: 50px; margin-bottom: 5px;" onclick="location.href='mypage.do';">마이페이지</div>
+                </div>
+                <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
+            	<div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
+            	<div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
+            	<div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
             </div>
-            <div style="position:sticky;">
-            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
-            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='month_act.do';">이달의 활동왕</div>
-            <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="window.open('https://github.com/');">Go to Github</div>
-            </div>
-		</div>
-		
+        </div>
+        
         <div class="content">
             <div style="text-align: center; margin-top: 30px;">
                 <img src="images/ts.png" class="photo">
             </div>
-            <div class="myback">
-                my_page
-            </div> 
+            <div class="username" style="text-align: center;">${username}</div>
+            
+            <!-- 질문과 답변 -->
+            <!-- <div style="background-color: #FFDD3D;">질문과 답변</div> -->
+            <div class="con1">
+                <div class="my_qna">
+                    <div class="title_sub2">
+                        <a>질문 기록</a>
+                    </div>
+                    <q:choose>
+                    	<q:when test="${empty ques}">
+                    		<div class="list_top con1">
+                    			<div class="dotdotdot"><a>글이 없습니다.</a></div>
+                    		</div>	
+                    	</q:when>
+                    	<q:otherwise>
+                    		<q:forEach items="${ques}" end="4" var="t">
+	                    		<div class="list_top con1">
+	                        		<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.title}</a></div>
+	                        		<button class="delete" onclick="location.href='del.do?no=${t.no}&del=return_mypage';">삭제</button>
+	                        		<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
+	                    		</div>
+                    		</q:forEach> 
+                    	</q:otherwise>
+                    </q:choose>
+                </div>
                 
-			<div class="title_sub2">
-				<a href="notice.do">내가 쓴 질문</a>
-			</div>
-			<q:forEach items="${ques}" end="2" var="t">
-				<div class="list_top">
-					<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.title}</a></div>
-				</div>
-			</q:forEach> 
-			
-			<div class="title_sub2">
-				<a href="notice.do">내가 쓴 질문답변</a>
-			</div>
-			<q:forEach items="${q_ans}" end="2" var="t">
-				<div class="list_top">
-					<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.content}</a></div>
-				</div>
-			</q:forEach> 
-			
-			<div class="title_sub2">
-				<a>----------------------------------------------------------------------</a><br/>
-				<a>----------------------------------------------------------------------</a><br/>
-				<a>----------------------------------------------------------------------</a>
-			</div>
-			
-			<div class="title_sub2">
-				<a href="notice.do">내가 쓴 잡담</a>
-			</div>
-			<q:forEach items="${com}" end="2" var="t">
-				<div class="list_top">
-					<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.title}</a></div>
-				</div>
-			</q:forEach> 
-			
-			<div class="title_sub2">
-				<a href="notice.do">내가 쓴 잡담답변</a>
-			</div>
-			<q:forEach items="${com_ans}" end="2" var="t">
-				<div class="list_top">
-					<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.content}</a></div>
-				</div>
-			</q:forEach>         
-
-        </div>     
+                <div class="my_ans">
+                    <div class="title_sub2">
+                        <a>댓글 기록</a>
+                    </div>
+                    <q:choose>
+                    	<q:when test="${empty q_ans}">
+                    		<div class="list_top con1">
+                    			<div class="dotdotdot"><a>댓글이 없습니다.</a></div>
+                    		</div>	
+                    	</q:when>
+                    	<q:otherwise>
+                    		<q:forEach items="${q_ans}" end="4" var="t">
+	                    		<div class="list_top con1">
+	                        		<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.content}</a></div>
+	                        		<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
+	                    		</div>
+                    		</q:forEach> 
+                    	</q:otherwise>
+                    </q:choose>
+                </div>
+            </div>
+            
+            <!-- 잡담과 답변 -->
+            <div class="con1">
+                <div class="my_qna" style="margin-bottom: 80px;">
+                    <div class="title_sub2">
+                        <a>잡담 기록</a>
+                    </div>
+                    <q:choose>
+                    	<q:when test="${empty com}">
+                    		<div class="list_top con1">
+                    			<div class="dotdotdot"><a>글이 없습니다.</a></div>
+                    		</div>	
+                    	</q:when>
+                    	<q:otherwise>
+                    		<q:forEach items="${com}" end="4" var="t">
+	                    		<div class="list_top con1">
+	                        		<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.content}</a></div>
+	                        		<button class="delete" onclick="location.href='delCom.do?no=${t.no}&del=return_mypage';">삭제</button>
+	                        		<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
+	                    		</div>
+                    		</q:forEach> 
+                    	</q:otherwise>
+                    </q:choose>
+                </div>
+                
+                <div class="my_ans" style="margin-bottom: 60px;">
+                    <div class="title_sub2">
+                        <a>댓글 기록</a>
+                    </div>
+                    <q:choose>
+                    	<q:when test="${empty com_ans}">
+                    		<div class="list_top con1">
+                    			<div class="dotdotdot"><a>글이 없습니다.</a></div>
+                    		</div>	
+                    	</q:when>
+                    	<q:otherwise>
+                    		<q:forEach items="${com_ans}" end="4" var="t">
+	                    		<div class="list_top con1">
+	                        		<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.content}</a></div>
+	                        		<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
+	                    		</div>
+                    		</q:forEach> 
+                    	</q:otherwise>
+                    </q:choose>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
