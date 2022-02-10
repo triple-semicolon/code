@@ -220,7 +220,9 @@ a {
 		                <q:if test="${operator eq \"Y\"}">
 	                    	<button class="delete" onclick="location.href='del.do?no=${t.no}';">ªË¡¶</button>
 	                    </q:if>
-		                <div style="margin-left: auto; color: green;">${t.username}</div>
+		                <div style="margin-left: auto; color: green;">
+		                	<a href="mypage.do?username=${t.username}">${t.username}</a>
+		                </div>
 		         	</div>
 		        </q:forEach>   
             </div>

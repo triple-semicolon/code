@@ -116,19 +116,35 @@ public class Ctrl {
 	
 	// 마이페이지
 	@RequestMapping("/mypage.do")
-	public ModelAndView mypage(HttpSession session) throws Exception {
-		String username = (String)session.getAttribute("username");
-		List<SpringVO> ques = springDao.findByUserName(username);
-		List<AnswerVO> q_ans = answerDao.findByUserName(username);
-		List<ComVO> com = comDao.findByUserName(username);
-		List<ComAnsVO> com_ans = comansDao.findByUserName(username);
-		
+	public ModelAndView mypage(HttpSession session, 
+			@RequestParam(value = "username", required = false) String username) throws Exception {
 		ModelAndView mnv = new ModelAndView();
-		mnv.setViewName("user_page");
-		mnv.addObject("ques", ques);
-		mnv.addObject("q_ans", q_ans);
-		mnv.addObject("com", com);
-		mnv.addObject("com_ans", com_ans);
+		if(session.getAttribute("username") == null) {
+			mnv.setViewName("view_login");
+			mnv.addObject("ecode", "need_login");
+		}
+		else {
+			if( username == null ) {
+				username = (String)session.getAttribute("username");
+				mnv.setViewName("my_page");
+			}
+			else if( username.equals((String)session.getAttribute("username")) ) {
+				mnv.setViewName("my_page");
+			}
+			else {
+				mnv.addObject("username", username);
+				mnv.setViewName("user_page");
+			}
+			List<SpringVO> ques = springDao.findByUserName(username);
+			List<AnswerVO> q_ans = answerDao.findByUserName(username);
+			List<ComVO> com = comDao.findByUserName(username);
+			List<ComAnsVO> com_ans = comansDao.findByUserName(username);
+			
+			mnv.addObject("ques", ques);
+			mnv.addObject("q_ans", q_ans);
+			mnv.addObject("com", com);
+			mnv.addObject("com_ans", com_ans);
+		}
 		return mnv;
 	}
 	
@@ -227,12 +243,13 @@ public class Ctrl {
 	public String del(final @ModelAttribute SpringVO vo, HttpSession session, 
 			@RequestParam(value = "del", required = false) String del) throws Exception {
 		springDao.delByPK(vo);
+		if( del == null ) {
+			return "redirect:qna_list.do";
+		}
 		if( del.equals("return_mypage") ) {
 			return "redirect:mypage.do";
 		}
-		else {
-			return "redirect:qna_list.do";
-		}
+		return "redirect:qna_list.do";
 	}
 	
 //-----------------------------------------------------------------
@@ -367,12 +384,14 @@ public class Ctrl {
 	public String del_com(final @ModelAttribute ComVO vo, HttpSession session,
 			@RequestParam(value = "del", required = false) String del ) throws Exception {
 		comDao.delByPK(vo);
+		if( del == null ) {
+			return "redirect:com_list.do";
+		}
 		if( del.equals("return_mypage") ) {
 			return "redirect:mypage.do";
 		}
-		else {
-			return "redirect:com_list.do";
-		}
+
+		return "redirect:com_list.do";
 		//comDao.delByPK(vo);
 		//return "redirect:com_list.do";
 	}

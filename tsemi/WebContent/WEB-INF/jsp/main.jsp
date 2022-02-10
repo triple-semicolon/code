@@ -250,7 +250,7 @@ a {
                     </div>
                     <q:forEach items="${month_king}" end="2" var="t">
                     	<div class="list_top" style="text-align: center; border-right: 3px solid #00CC00; color: green;">
-                        	${t.username}
+                        	<a href="mypage.do?username=${t.username}" style="color:green">${t.username}</a>
                     	</div>
                     </q:forEach>
                 </div>
@@ -266,15 +266,17 @@ a {
                     <div class="list" style="border-right: 3px solid #00CC00;">
                         <q:choose>
                         	<q:when test="${!(empty month_q)}">
-		                        <a href="question.jsp">${month_q.title}</a>
-		                        <div style="float: right; color: green;">${month_q.username}</div>
+		                        <a href="qna.do?no=${month_q.no}">${month_q.title}</a>
+		                        <div style="float: right; color: green;">
+		                        	<a href="mypage.do?username=${month_q.username}">${month_q.username}</a>
+		                        </div>
 		                        <div style="padding: 20px 10px 10px 10px;">
 		                            ${month_q.content}
 		                        </div>
 							</q:when>
 							<q:otherwise>
 								<br/>
-								<div style="padding: 20px 10px 10px 10px;">없어용~,~</div>
+								<div style="padding: 20px 10px 10px 10px;">좀 더 분발하시길~,~</div>
 								<br/>
 							</q:otherwise>
 						</q:choose>
@@ -292,7 +294,9 @@ a {
 					<q:forEach items="${ques}" end="4" var="t">
 						<div class="list">
 							<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.title}</a>
-							<div style="float: right; color: green;">${t.username}</div>
+								<div style="float: right; color: green;">
+									<a href="mypage.do?username=${t.username}">${t.username}</a>
+								</div>
 							</div>
 	         			</div>
 					</q:forEach>   
@@ -311,7 +315,9 @@ a {
                     <q:forEach items="${com}" end="4" var="t">
 						<div class="list">
 							<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.title}</a>
-							<div style="float: right; color: green;">${t.username}</div>
+								<div style="float: right; color: green;">
+									<a href="mypage.do?username=${t.username}">${t.username}</a>
+								</div>
 							</div>
 	         			</div>
 					</q:forEach>   

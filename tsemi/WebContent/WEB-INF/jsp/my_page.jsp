@@ -210,7 +210,9 @@ a {
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
             <div style="position:sticky; top:50px;">
-                <div class="top_menu menu_font" style="cursor: pointer; margin-top: 50px; margin-bottom: 5px;" onclick="location.href='mypage.do';">마이페이지</div>
+                <div style="background-color: green;">
+                    <div class="point_menu" style="cursor: pointer; margin-top: 50px; margin-bottom: 5px;" onclick="location.href='mypage.do';">마이페이지</div>
+                </div>
                 <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='notice.do';">공지사항</div>
             	<div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna_list.do';">Q & A</div>
             	<div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='com_list.do';">잡담</div>
@@ -242,9 +244,7 @@ a {
                     		<q:forEach items="${ques}" end="4" var="t">
 	                    		<div class="list_top con1">
 	                        		<div class="dotdotdot"><a href="qna.do?no=${t.no}">${t.title}</a></div>
-	                        		<q:if test="${operator eq \"Y\"}">
-	                        			<button class="delete" onclick="location.href='del.do?no=${t.no}&del=return_mypage';">삭제</button>
-	                        		</q:if>
+	                        		<button class="delete" onclick="location.href='del.do?no=${t.no}&del=return_mypage';">삭제</button>
 	                        		<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
 	                    		</div>
                     		</q:forEach> 
@@ -290,10 +290,8 @@ a {
                     		<q:forEach items="${com}" end="4" var="t">
 	                    		<div class="list_top con1">
 	                        		<div class="dotdotdot"><a href="com.do?no=${t.no}">${t.content}</a></div>
-	                        		<q:if test="${operator eq \"Y\"}">
-	                        			<button class="delete" onclick="location.href='delCom.do?no=${t.no}&del=return_mypage';">삭제</button>
-	                        			<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
-	                    			</q:if>
+	                        		<button class="delete" onclick="location.href='delCom.do?no=${t.no}&del=return_mypage';">삭제</button>
+	                        		<!--<button class="delete" style="" onclick="삭제가되어야겠지...">삭제</button> -->
 	                    		</div>
                     		</q:forEach> 
                     	</q:otherwise>

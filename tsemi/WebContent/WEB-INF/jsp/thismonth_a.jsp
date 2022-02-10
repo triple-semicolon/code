@@ -229,21 +229,25 @@ a {
             <h4 class="con_menu_font">이달의 활동왕</h4>
             <div class="this_list2 con1">
                 <div class="a_king_top">이달의 답변왕</div>
-                <div class="q_king_top" style="cursor: pointer;" onclick="location.href='qna.do?no=${list.no}';">이달의 질문</div>
+				<div class="q_king_top">이달의 질문</div>
+		                <!--<div class="q_king_top" style="cursor: pointer;" onclick="location.href='qna.do?no=${list.no}';">이달의 질문</div>
+						-->
             </div>
             <div class="this_list con1">
                 <div class="a_king" style="text-align: center;">
                 	<q:forEach items="${ans_ls}" end="14" var="t">
-                		<div class="list">${t.username}</div>
+                		<div class="list">
+                			<a href="mypage.do?username=${t.username}">${t.username}</a>
+                		</div>
                 	</q:forEach>
                 </div>
                 
                 <div class="q_king">
                     <div class="list this_q" style="color: black; padding: 10px 20px;">
                     	<q:choose>
-                        	<q:when test="${!(empty month_q)}">
+                        	<q:when test="${!(empty list)}">
 		                        <div style="font-weight: bold; font-size: 20px;">
-		                        	${list.title}
+		                        	<a href="qna.do?no=${list.no}">${list.title}</a>
 		                        </div>
 		                        
 			                    <div style="color: black; padding: 10px 20px;">
@@ -251,7 +255,7 @@ a {
 			                    </div>
 							</q:when>
 							<q:otherwise>
-								<div style="padding: 20px 10px 10px 10px;">없어용~,~</div>
+								<div style="padding: 20px 10px 10px 10px;">좀 더 분발하시길~,~</div>
 							</q:otherwise>
 						</q:choose>	
                     </div>

@@ -135,6 +135,7 @@ html, body {
     height: auto;
 }
 
+
 a {
     text-decoration: none;
     color: green;
@@ -330,7 +331,9 @@ function Checkform() {
             <div>
                 <h4 class="con_menu_font" style="margin-bottom: 5px;">${list.title}</h4>
                 <div style="display: flex;">
-                    <div class="title_time" style="font-size: 13px; font-weight: bold;">${list.username}</div>
+                    <div class="title_time" style="font-size: 13px; font-weight: bold;">
+                    	<a href="mypage.do?username=${list.username}" style="color:grey">${list.username}</a>
+                    </div>
                     <div class="title_time" style="font-size: 12px; margin-left: 5px; margin-top:auto; color: gray;">${list.time}</div>
                     <!-- Á¶È¸¼ö -->
                     <div style="display: flex;">
@@ -365,7 +368,9 @@ function Checkform() {
             			<div style="display: flex;">
 		                	<div class="qna_ans_user" style="display: flex;">
 		                    	<img src="images/ts.png" class="photo">
-		                    	<div class="user" style="font-size: 18px; font-weight: bold;">${t.username}</div>
+		                    	<div class="user" style="font-size: 18px; font-weight: bold;">
+		                    		<a href="mypage.do?username=${t.username}" style="color: black">${t.username}</a>
+		                    	</div>
 		                    	<div class="user" style="font-size: 12px; margin-top: 20px; color: gray;">${t.time}</div>
 								
 		                	</div>

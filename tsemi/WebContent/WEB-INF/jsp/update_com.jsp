@@ -292,13 +292,13 @@ function Checkform() {
             	</div>
         		<div>
                 	<div class="textarea_out" style="padding: 15px;">
-            			<textarea class="textarea" id="abcd" name="title" rows=1>제목을 입력해주세요</textarea>
+            			<textarea class="textarea" id="abcd" name="title" rows=1></textarea>
         			</div>
         			<div>
             			<input type="hidden" name="username" value="${username}"/>
        				 </div>
         			<div class="textarea_out" style="padding: 15px; margin-top:20px;">
-            			<textarea class="textarea" style="height: 620px;" id="abcd" name="content">내용을 입력해주세요</textarea>
+            			<textarea class="textarea" style="height: 620px;" id="abcd" name="content"></textarea>
         			</div>
             	</div>
     		</form>
