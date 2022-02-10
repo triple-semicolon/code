@@ -254,20 +254,21 @@ a {
 
 .wow {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-    margin-left: 25px;
-    margin-top: 8px;
-    border: 3px solid #FFDD3D;
-    padding: 5px;
+    font-size: 14px;
+    margin-left: 0px;
+    margin-top: 30px;
+    border: 2px solid #FFDD3D;
+    padding: 2px 20px 2px 20px;
     border-radius: 5px;
     background: none;
     cursor: pointer;
     font-weight: bold;
-    color: green;
+    color: gray;
 }
 
 .wow:hover,.wow:active,.wow:focus {
     background: #FFDD3D;
+    color: #FFFFFF;
 }
 
 .wow_ans {
@@ -340,16 +341,16 @@ function Checkform() {
                     </div>
                 </div>
             </div>
-            
-            <!-- 추천버튼 근데이제 숫자를 곁들인 .. 이렇게 해도 될까나?  -->
-            <button class="wow" onclick="location.href='recomQ.do?no=${list.no}';">
-                좋은질문이네요! ${list.recommend}
-                <!-- button 형식으로 바꿔보았는데 input 아마 먹힐것이다... -->
-                <input type="hidden" name="username" value="${username}"/>
-            </button>
-            
+
             <div class="qna_list">
                 ${list.content }
+                
+	            <!-- 추천버튼 근데이제 숫자를 곁들인 .. 이렇게 해도 될까나?  -->
+	            <button class="wow" onclick="location.href='recomQ.do?no=${list.no}';">
+	                좋은질문이네요! ${list.recommend}
+	                <!-- button 형식으로 바꿔보았는데 input 아마 먹힐것이다... -->
+	                <input type="hidden" name="username" value="${username}"/>
+	            </button>
             </div>
             
             <form method="POST" action="add_ans.do?no=${list.no}" onSubmit="return Checkform()">
