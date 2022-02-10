@@ -24,6 +24,8 @@ public class SpringDAO_Impl implements SpringDAO{
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    boolean already_recom = false;
+    
     @Override
     public List<SpringVO> findAll() throws Exception {
         RowMapper<SpringVO> rowMapper = new RowMapper<SpringVO>() {
@@ -127,14 +129,22 @@ public class SpringDAO_Impl implements SpringDAO{
 			}
     	};
     	
-        try {
-        	RecomQVO rec = jdbcTemplate.queryForObject("SELECT * FROM recomQ_T WHERE no=? and username=?", rm, pvo.getNo(), username );
+    	try {
+        	if(already_recom==true) {
+            	jdbcTemplate.update("UPDATE tmp_02 SET recommend = recommend-1 WHERE no="+pvo.getNo());
+            	jdbcTemplate.update("DELETE FROM recomQ_T WHERE no = "+pvo.getNo()+" AND username = '"+username+"'" );
+            	already_recom = false;
+            }
+        	else {
+        		RecomQVO rec = jdbcTemplate.queryForObject("SELECT * FROM recomQ_T WHERE no=? and username=?", rm, pvo.getNo(), username );
+        	}
         }
         catch( EmptyResultDataAccessException e ) {
         	// 찾는 값이 없다면
         	jdbcTemplate.update("UPDATE tmp_02 SET recommend = recommend+1 WHERE no="+pvo.getNo());
         	jdbcTemplate.update("INSERT INTO recomQ_T VALUES(?,?)", pvo.getNo(), username );
-        	// 원래 글 삭제됐을때 이것도 삭제되게 구현!! 
+        	// 원래 글 삭제됐을때 이것도 삭제되게 구현!!
+        	already_recom = true;
         }
 	}
     
