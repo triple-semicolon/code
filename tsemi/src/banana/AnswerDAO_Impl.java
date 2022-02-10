@@ -21,8 +21,6 @@ public class AnswerDAO_Impl implements AnswerDAO{
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-    boolean already_recom = false;
-	
 	@Override
 	public List<AnswerVO> findByFk(final AnswerVO pvo,final SpringVO vo) throws Exception {
 		RowMapper<AnswerVO> rowMapper = new RowMapper<AnswerVO>() {
@@ -116,21 +114,13 @@ public class AnswerDAO_Impl implements AnswerDAO{
     	AnswerVO vo = findByPk(pvo);
     	
     	try {
-        	if(already_recom==true) {
-            	jdbcTemplate.update("UPDATE tmp_03 SET recommend = recommend-1 WHERE ans_no="+pvo.getAns_no());
-            	jdbcTemplate.update("DELETE FROM recomA_T WHERE no = "+pvo.getNo()+" AND username = '"+username+"'");
-            	already_recom = false;
-            }
-        	else {
-        		RecomAVO rec = jdbcTemplate.queryForObject("SELECT * FROM recomA_T WHERE ans_no=? AND username=?", rm, vo.getAns_no(),username );
-        	}
+        	RecomAVO rec = jdbcTemplate.queryForObject("SELECT * FROM recomA_T WHERE ans_no=? AND username=?", rm, vo.getAns_no(),username );
         }
         catch( EmptyResultDataAccessException e ) {
         	// 찾는 값이 없다면
         	jdbcTemplate.update("UPDATE tmp_03 SET recommend = recommend+1 WHERE ans_no="+pvo.getAns_no());
         	jdbcTemplate.update("INSERT INTO recomA_T VALUES(?,?,?)", vo.getAns_no(),vo.getNo(), username );
         	// 원래 글 삭제됐을때 이것도 삭제되게 구현!! 
-        	already_recom = true;
         }
    
 	}

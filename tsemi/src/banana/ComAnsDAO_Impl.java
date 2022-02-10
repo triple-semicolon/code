@@ -21,8 +21,6 @@ public class ComAnsDAO_Impl implements ComAnsDAO{
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-    boolean already_recom = false;
-	
 	@Override
 	public List<ComAnsVO> findByFk(ComAnsVO pvo, ComVO vo) throws Exception {
 		RowMapper<ComAnsVO> rowMapper = new RowMapper<ComAnsVO>() {
@@ -95,21 +93,13 @@ public class ComAnsDAO_Impl implements ComAnsDAO{
     	
     	ComAnsVO vo = findByPk(pvo);
     	try {
-        	if(already_recom==true) {
-            	jdbcTemplate.update("UPDATE comAns_T SET recommend = recommend-1 WHERE ans_no="+pvo.getAns_no());
-            	jdbcTemplate.update("DELETE FROM recomCom_T WHERE no = "+pvo.getNo()+" AND username = '"+username+"'" );
-            	already_recom = false;
-            }
-        	else {
-        		jdbcTemplate.queryForObject("SELECT * FROM recomCom_T WHERE ans_no=? AND username=?", rm, vo.getAns_no(), username );
-        	}
+    		jdbcTemplate.queryForObject("SELECT * FROM recomCom_T WHERE ans_no=? AND username=?", rm, vo.getAns_no(), username );
         }
         catch( EmptyResultDataAccessException e ) {
         	// 찾는 값이 없다면
         	jdbcTemplate.update("UPDATE comAns_T SET recommend = recommend+1 WHERE ans_no="+pvo.getAns_no());
         	jdbcTemplate.update("INSERT INTO recomCom_T VALUES(?,?,?)", vo.getAns_no(),vo.getNo(), username );
         	// 원래 글 삭제됐을때 이것도 삭제되게 구현!! 
-        	already_recom = true;
         }
 	}
 
