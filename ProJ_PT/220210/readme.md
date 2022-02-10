@@ -9,8 +9,8 @@
 - 내가 쓴 질문 / 내가 쓴 답변
   내가 쓴 잡담/ 내가 쓴 답변
 - 레코드에 제목 삭제 날짜
+ 
 
-다영언니 수정본 올라오면 
 2. 메뉴고정 수정
 <div style="position:sticky; top:50px;">
 	<div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
