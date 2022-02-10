@@ -114,7 +114,7 @@ public class Ctrl {
 	}
 //-----------------------------------------------------------------	
 	
-	// 마이페이지 구현하고 싶으나 시간 부족~~
+	// 마이페이지
 	@RequestMapping("/mypage.do")
 	public ModelAndView mypage(HttpSession session) throws Exception {
 		String username = (String)session.getAttribute("username");
