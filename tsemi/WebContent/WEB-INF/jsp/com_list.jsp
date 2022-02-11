@@ -136,7 +136,8 @@ a {
 .logout {    
     margin-top: 21px;
     margin-right: 10px;
-    float: right;
+    /* margin-left: auto; */
+    /* float: right; */
     font-family: 'Noto Sans KR', sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -174,14 +175,29 @@ a {
      white-space: nowrap;
      color: green;
 }
+
+.hi {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    font-weight: bold;
+    color: #0D5718;
+}
+
 </style>
 <script src="https://ajax.googleapis.com/aja/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 <body>
-	<header class="headers">
-        <a style="color: #0D5718; margin-left: 10px;" href="home.do">;;;</a>
-	    <button style="color: #0D5718;" class="logout" onclick="location.href='login.do';">·Î±×¾Æ¿ô</button>
+	<header class="headers con1">
+        <a style="color: #0D5718; margin-left: 10px; margin-top: auto; font-size: 50px;" href="home.do">;;;</a>
+        <div class="hi" style="margin-top: auto;">
+            Hi ${username }
+            <button style="color: #0D5718; margin-left: 15px;" class="logout" onclick="location.href='login.do';">·Î±×¾Æ¿ô</button>
+        </div>
     </header>
+    
     <div>
     	<div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
