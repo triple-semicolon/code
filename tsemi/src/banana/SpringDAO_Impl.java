@@ -40,7 +40,7 @@ public class SpringDAO_Impl implements SpringDAO{
                 return vo;
             }
         };
-        List<SpringVO> ls = jdbcTemplate.query("select * from tmp_02 ORDER BY no DESC", rowMapper);
+        List<SpringVO> ls = jdbcTemplate.query("select * from ques_T ORDER BY no DESC", rowMapper);
         return ls;
     }
     
@@ -62,7 +62,7 @@ public class SpringDAO_Impl implements SpringDAO{
         };
         SpringVO ls = null;
         try {
-        	ls = jdbcTemplate.queryForObject("select * from tmp_02 where recommend = (select max(recommend) as MAX from tmp_02)", rowMapper);
+        	ls = jdbcTemplate.queryForObject("select * from ques_T where recommend = (select max(recommend) as MAX from ques_T)", rowMapper);
         }
         catch(IncorrectResultSizeDataAccessException e) {
         	// max 값이 두개 이상이라면
@@ -87,8 +87,8 @@ public class SpringDAO_Impl implements SpringDAO{
                 return vo;
             }
         };
-        // jdbcTemplate.update("update tmp_02 set view = view+1 where no="+pvo.getNo());
-        SpringVO ls = jdbcTemplate.queryForObject("select * from tmp_02 where no="+pvo.getNo(), rowMapper);
+        // jdbcTemplate.update("update ques_T set view = view+1 where no="+pvo.getNo());
+        SpringVO ls = jdbcTemplate.queryForObject("select * from ques_T where no="+pvo.getNo(), rowMapper);
 		return ls;
 	}
     
@@ -108,7 +108,7 @@ public class SpringDAO_Impl implements SpringDAO{
                 return vo;
             }
         };
-        List<SpringVO> ls = jdbcTemplate.query("select * from tmp_02 WHERE username=? ORDER BY no DESC", rowMapper, username);
+        List<SpringVO> ls = jdbcTemplate.query("select * from ques_T WHERE username=? ORDER BY no DESC", rowMapper, username);
         return ls;
 	}
     
@@ -125,12 +125,12 @@ public class SpringDAO_Impl implements SpringDAO{
     	};
 
         try {
-        	ViewVO rec = jdbcTemplate.queryForObject("SELECT * FROM view_T WHERE no=? and username=?", rm, pvo.getNo(), username );
+        	ViewVO rec = jdbcTemplate.queryForObject("SELECT * FROM quesView_T WHERE no=? and username=?", rm, pvo.getNo(), username );
         }
         catch( EmptyResultDataAccessException e ) {
         	// 찾는 값이 없다면
-        	jdbcTemplate.update("UPDATE tmp_02 SET view = view+1 WHERE no="+ pvo.getNo());
-        	jdbcTemplate.update("INSERT INTO view_T VALUES(?,?)", pvo.getNo(), username );
+        	jdbcTemplate.update("UPDATE ques_T SET view = view+1 WHERE no="+ pvo.getNo());
+        	jdbcTemplate.update("INSERT INTO quesView_T VALUES(?,?)", pvo.getNo(), username );
         	// 원래 글 삭제됐을때 이것도 삭제되게 구현!! 
         }
 	}
@@ -152,7 +152,7 @@ public class SpringDAO_Impl implements SpringDAO{
         }
         catch( EmptyResultDataAccessException e ) {
         	// 찾는 값이 없다면
-        	jdbcTemplate.update("UPDATE tmp_02 SET recommend = recommend+1 WHERE no="+pvo.getNo());
+        	jdbcTemplate.update("UPDATE ques_T SET recommend = recommend+1 WHERE no="+pvo.getNo());
         	jdbcTemplate.update("INSERT INTO recomQ_T VALUES(?,?)", pvo.getNo(), username );
         	// 원래 글 삭제됐을때 이것도 삭제되게 구현!!
         }
@@ -168,22 +168,22 @@ public class SpringDAO_Impl implements SpringDAO{
                 stmt.setString( 3, Util.han(pvo.getContent()) );
             }
         };
-        int uc = jdbcTemplate.update("INSERT INTO tmp_02 VALUES (default,?,?,?,0,0, now())", pss );
+        int uc = jdbcTemplate.update("INSERT INTO ques_T VALUES (default,?,?,?,0,0, now())", pss );
         return uc;
     }
 
     @Override
     public int delByPK(SpringVO pvo) throws Exception {
     	// 질문 삭제
-        int uc = jdbcTemplate.update("DELETE FROM tmp_02 WHERE no = " + pvo.getNo());
+        int uc = jdbcTemplate.update("DELETE FROM ques_T WHERE no = " + pvo.getNo());
         // 질문에 달린 답변들 삭제
-        uc = uc + jdbcTemplate.update("DELETE FROM tmp_03 WHERE no = " + pvo.getNo());
+        uc = uc + jdbcTemplate.update("DELETE FROM quesAns_T WHERE no = " + pvo.getNo());
         // 질문에 달린 추천 삭제
         uc = uc + jdbcTemplate.update("DELETE FROM recomQ_T WHERE no = " + pvo.getNo());
         // 질문에 대한 답변 추천 삭제
         uc = uc + jdbcTemplate.update("DELETE FROM recomA_T WHERE no = " + pvo.getNo());
         // 질문에 대한 조회수 추천 삭제
-        uc = uc + jdbcTemplate.update("DELETE FROM view_T WHERE no = " + pvo.getNo());
+        uc = uc + jdbcTemplate.update("DELETE FROM quesView_T WHERE no = " + pvo.getNo());
         return uc;
     }
 }

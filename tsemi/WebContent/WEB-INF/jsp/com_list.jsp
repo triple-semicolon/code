@@ -180,7 +180,7 @@ a {
 <body>
 	<header class="headers">
         <a style="color: #0D5718; margin-left: 10px;" href="home.do">;;;</a>
-        <button style="color: #0D5718;" class="logout" onclick="location.href='login.do';">·Î±×¾Æ¿ô</button>
+	    <button style="color: #0D5718;" class="logout" onclick="location.href='login.do';">·Î±×¾Æ¿ô</button>
     </header>
     <div>
     	<div class="menu">

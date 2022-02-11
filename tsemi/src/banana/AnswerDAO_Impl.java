@@ -36,7 +36,7 @@ public class AnswerDAO_Impl implements AnswerDAO{
                 return vo;
             }
         };
-        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM tmp_03 WHERE no="+vo.getNo()+" ORDER BY recommend DESC", rowMapper);
+        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM quesAns_T WHERE no="+vo.getNo()+" ORDER BY recommend DESC", rowMapper);
         return ls;
 	}
 	
@@ -55,7 +55,7 @@ public class AnswerDAO_Impl implements AnswerDAO{
                 return vo;
             }
         };
-        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM tmp_03 ORDER BY recommend DESC", rowMapper);
+        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM quesAns_T ORDER BY recommend DESC", rowMapper);
         return ls;
 	}
 	
@@ -75,7 +75,7 @@ public class AnswerDAO_Impl implements AnswerDAO{
                 return vo;
             }
         };
-        AnswerVO ls = jdbcTemplate.queryForObject("select * from tmp_03 where ans_no="+pvo.getAns_no(), rowMapper);
+        AnswerVO ls = jdbcTemplate.queryForObject("select * from quesAns_T where ans_no="+pvo.getAns_no(), rowMapper);
 		return ls;
 	}
 	
@@ -94,7 +94,7 @@ public class AnswerDAO_Impl implements AnswerDAO{
                 return vo;
             }
         };
-        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM tmp_03 WHERE username = ? ORDER BY no", rowMapper, username);
+        List<AnswerVO> ls = jdbcTemplate.query("SELECT * FROM quesAns_T WHERE username = ? ORDER BY no", rowMapper, username);
         return ls;
 	}
 
@@ -118,7 +118,7 @@ public class AnswerDAO_Impl implements AnswerDAO{
         }
         catch( EmptyResultDataAccessException e ) {
         	// 찾는 값이 없다면
-        	jdbcTemplate.update("UPDATE tmp_03 SET recommend = recommend+1 WHERE ans_no="+pvo.getAns_no());
+        	jdbcTemplate.update("UPDATE quesAns_T SET recommend = recommend+1 WHERE ans_no="+pvo.getAns_no());
         	jdbcTemplate.update("INSERT INTO recomA_T VALUES(?,?,?)", vo.getAns_no(),vo.getNo(), username );
         	// 원래 글 삭제됐을때 이것도 삭제되게 구현!! 
         }
@@ -135,13 +135,13 @@ public class AnswerDAO_Impl implements AnswerDAO{
               
             }
         };
-        int uc = jdbcTemplate.update("INSERT INTO tmp_03 VALUES (default,"+vo.getNo()+",?,?,0, now())", pss );
+        int uc = jdbcTemplate.update("INSERT INTO quesAns_T VALUES (default,"+vo.getNo()+",?,?,0, now())", pss );
         return uc;
 	}
 
 	@Override
 	public int delByPK(AnswerVO pvo) throws Exception {
-		 int uc = jdbcTemplate.update("DELETE FROM tmp_03 WHERE ans_no = " + pvo.getAns_no());
+		 int uc = jdbcTemplate.update("DELETE FROM quesAns_T WHERE ans_no = " + pvo.getAns_no());
 		 uc = uc + jdbcTemplate.update("DELETE FROM recomA_T WHERE ans_no = " + pvo.getAns_no());
 	     return uc;
 	}

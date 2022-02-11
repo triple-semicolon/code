@@ -114,7 +114,7 @@ public class Ctrl {
 	}
 //-----------------------------------------------------------------	
 	
-	// 마이페이지
+	// 마이페이지, 유저페이지
 	@RequestMapping("/mypage.do")
 	public ModelAndView mypage(HttpSession session, 
 			@RequestParam(value = "username", required = false) String username) throws Exception {
@@ -132,7 +132,7 @@ public class Ctrl {
 				mnv.setViewName("my_page");
 			}
 			else {
-				mnv.addObject("username", username);
+				mnv.addObject("name", username);
 				mnv.setViewName("user_page");
 			}
 			List<SpringVO> ques = springDao.findByUserName(username);
@@ -304,7 +304,7 @@ public class Ctrl {
 
 //---------------------------------------------------------
 	
-	// home
+	// home 홈화면
 	@RequestMapping("/home.do")
 	public ModelAndView main() throws Exception {
 		List<NoticeVO> notice = noticeDao.findAll();

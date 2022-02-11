@@ -223,7 +223,7 @@ a {
             <div style="text-align: center; margin-top: 30px;">
                 <img src="images/ts.png" class="photo">
             </div>
-            <div class="username" style="text-align: center;">${username}</div>
+            <div class="username" style="text-align: center;">${name}</div>
             
             <!-- 질문과 답변 -->
             <!-- <div style="background-color: #FFDD3D;">질문과 답변</div> -->
