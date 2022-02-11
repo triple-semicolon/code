@@ -86,6 +86,7 @@ qna_view
   
 +++ git 올리는 법
 git과 연결된 폴더에 파일 올리고 오른쪽마우스 - git bash
+git pull 로 최신버전 
 git status 로 변경사항 확인
 git add .
 git commit -m "메시지쓰고"
