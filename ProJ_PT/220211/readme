@@ -1,0 +1,48 @@
+디자인 수정
+헤더에 유저이름 뜨게 만들고 헤더 로고 크기 조절
+
+css 에 class 추가 & 수정
+
+.hi {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    font-weight: bold;
+    color: #0D5718;
+}
+
+/* 로그아웃 버튼 */
+.logout {    
+    margin-top: 21px;
+    margin-right: 10px;
+    /* margin-left: auto; */
+    /* float: right; */
+    font-family: 'Noto Sans KR', sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #FDFFF2;
+    border: 0;
+    padding: 5px 10px;
+    color: black;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+
+.con1 {
+    display: flex;
+}
+
+
+html 에 헤더 코드 수정
+<!-- con1 추가, a의 style 추가, hi class 추가, logout class 변경, username div 추가 -->
+<header class="headers con1">
+    <a style="color: #0D5718; margin-left: 10px; margin-top: auto; font-size: 50px;" href="home.do">;;;</a>
+    <div class="hi" style="margin-top: auto;">
+        Hi ${username }
+        <button style="color: #0D5718; margin-left: 15px;" class="logout" onclick="location.href='login.do';">로그아웃</button>
+    </div>
+</header>
