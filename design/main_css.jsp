@@ -119,7 +119,7 @@ html, body {
     margin-bottom: 0px;
     margin-right: auto;
     margin-left: auto;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
     height: 250px;
     width: 90%
 }
@@ -130,7 +130,7 @@ html, body {
     margin-bottom: 80px;
     margin-right: auto;
     margin-left: auto;
-    background-color: #f8f8f8;
+    background-color: #FDFFF2;
     height: 250px;
     width: 90%
 }
@@ -182,11 +182,13 @@ a {
     color: green;
 }
 
+
 /* 로그아웃 버튼 */
 .logout {    
     margin-top: 21px;
     margin-right: 10px;
-    float: right;
+    /* margin-left: auto; */
+    /* float: right; */
     font-family: 'Noto Sans KR', sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -204,13 +206,26 @@ a {
   background: #00CC00;
 }
 
+.hi {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    font-weight: bold;
+    color: #0D5718;
+}
 
 </style>
 </head>
 <body>
-    <header class="headers">
-        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
-        <button style="color: #0D5718;" class="logout">로그아웃</button>
+    <!-- con1 추가, a의 style 추가, hi class 추가, logout class 변경, username div 추가 -->
+    <header class="headers con1">
+        <a style="color: #0D5718; margin-left: 10px; margin-top: auto; font-size: 50px;" href="main_css.jsp">;;;</a>
+        <div class="hi" style="margin-top: auto;">
+            Hi username
+            <button style="color: #0D5718; margin-left: 15px;" class="logout">로그아웃</button>
+        </div>
     </header>
     <div class="wrapper">
         <div class="menu">

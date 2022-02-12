@@ -76,8 +76,8 @@ html, body {
 }
 
 .wrapper {
-  display: flex;
-  ovreflow: hidden;
+    display: flex;
+    ovreflow: hidden;
 }
 
 .content {
@@ -200,7 +200,8 @@ a {
 .logout {    
     margin-top: 21px;
     margin-right: 10px;
-    float: right;
+    /* margin-left: auto; */
+    /* float: right; */
     font-family: 'Noto Sans KR', sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -259,20 +260,21 @@ a {
 
 .wow {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 15px;
-    margin-left: 25px;
-    margin-top: 8px;
-    border: 3px solid #FFDD3D;
-    padding: 5px;
+    font-size: 14px;
+    margin-left: 0px;
+    margin-top: 30px;
+    border: 2px solid #FFDD3D;
+    padding: 2px 20px 2px 20px;
     border-radius: 5px;
     background: none;
     cursor: pointer;
     font-weight: bold;
-    color: green;
+    color: gray;
 }
 
 .wow:hover,.wow:active,.wow:focus {
     background: #FFDD3D;
+    color: #FFFFFF;
 }
 
 .wow_ans {
@@ -295,13 +297,30 @@ a {
     color: #FFFFFF;
 }
 
+.con1 {
+    display: flex;
+}
+
+.hi {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    font-weight: bold;
+    color: #0D5718;
+}
 
 </style>
 </head>
 <body>
-    <header class="headers">
-        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
-        <button style="color: #0D5718;" class="logout">로그아웃</button>
+    <!-- con1 추가, a의 style 추가, hi class 추가, logout class 변경, username div 추가 -->
+    <header class="headers con1">
+        <a style="color: #0D5718; margin-left: 10px; margin-top: auto; font-size: 50px;" href="main_css.jsp">;;;</a>
+        <div class="hi" style="margin-top: auto;">
+            Hi username
+            <button style="color: #0D5718; margin-left: 15px;" class="logout">로그아웃</button>
+        </div>
     </header>
     <div class="wrapper">
         <div class="menu" style="height: auto;">
@@ -334,10 +353,7 @@ a {
                         <!-- <div class="user" style="font-size: 12px; margin-top: 20px; margin-left: 5px; color: gray;">2</div>  조회수 숫자.. 따로 빼야하나?.. -->
                     </div>
                 </div>
-            </div>
-            
-            <!-- 추천버튼 근데이제 숫자를 곁들인 .. 이렇게 해도 될까나?  -->
-            <button class="wow" onclick="추천이되어야겠지..">좋은질문이네요! 5</button>
+            </div>            
             
             <div class="qna_list">
                 음... 디자인 고민<br/>
@@ -349,6 +365,9 @@ a {
                 <br/>
                 testeststste
                 <br/>
+                
+                <!-- 추천버튼 근데이제 숫자를 곁들인 .. 이렇게 해도 될까나?  -->
+                <button class="wow" onclick="추천이되어야겠지..">좋은질문이네요! 5</button>
             </div>
             
             <div class="textarea_out" style="padding: 10px;">

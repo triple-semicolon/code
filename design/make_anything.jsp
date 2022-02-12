@@ -158,7 +158,8 @@ a {
 .logout {    
     margin-top: 21px;
     margin-right: 10px;
-    float: right;
+    /* margin-left: auto; */
+    /* float: right; */
     font-family: 'Noto Sans KR', sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -242,21 +243,35 @@ a {
   background: #FFF53E;
 }
 
+.hi {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    font-weight: bold;
+    color: #0D5718;
+}
 
 </style>
 </head>
 <body>
-    <header class="headers">
-        <a style="color: #0D5718; margin-left: 10px;" href="main_css.jsp">;;;</a>
-        <button style="color: #0D5718;" class="logout">로그아웃</button>
+    <!-- con1 추가, a의 style 추가, hi class 추가, logout class 변경, username div 추가 -->
+    <header class="headers con1">
+        <a style="color: #0D5718; margin-left: 10px; margin-top: auto; font-size: 50px;" href="main_css.jsp">;;;</a>
+        <div class="hi" style="margin-top: auto;">
+            Hi username
+            <button style="color: #0D5718; margin-left: 15px;" class="logout">로그아웃</button>
+        </div>
     </header>
     <div class="wrapper">
         <div class="menu">
             <!-- <div class="menu_font">Triple<br/>semicolon</div>  -->
             <div class="menu_font"></div>
-            <!-- <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div> -->
+            <!--  -->
             
             <div style="position:sticky; top:50px;">
+                <div class="bottom_menu menu_font" style="cursor: pointer;" onclick="location.href='user_page.jsp';">마이페이지</div>
 	            <div class="top_menu menu_font" style="cursor: pointer;" onclick="location.href='gong_menu.jsp';">공지사항</div>
 	            <div class="middle_menu menu_font" style="cursor: pointer;" onclick="location.href='qna.jsp';">Q & A</div>
 	            <div style="background-color: green;">
