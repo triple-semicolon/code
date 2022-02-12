@@ -222,7 +222,7 @@ a {
         <div class="content">
             <!-- if user==운영자.. 삭제 표시 -->
             <q:if test="${operator eq \"Y\"}">
-				<button class="delete" onclick="location.href='del_notice.do?no=${t.no}';">삭제</button>
+				<button class="delete" onclick="location.href='del_notice.do?no=${list.no}';">삭제</button>
 			</q:if>
              
             <div>

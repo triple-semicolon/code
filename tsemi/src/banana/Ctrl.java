@@ -61,8 +61,8 @@ public class Ctrl {
 	
 	// 로그인 화면, 세션 정보 삭제
 	@RequestMapping("/login.do")
-	public ModelAndView login(HttpSession session, @RequestParam(value = "ecode", required = false) String ecode ) 
-			throws Exception {
+	public ModelAndView login(HttpSession session, 
+			@RequestParam(value = "ecode", required = false) String ecode ) throws Exception {
 		if (session.getAttribute("username") != null || session.getAttribute("password") != null) {
 			session.removeAttribute("username");
 			session.removeAttribute("password");
@@ -79,7 +79,9 @@ public class Ctrl {
 	// 로그인 아이디, 패스워드 검증
 	@RequestMapping("/login_add.do")
 	public String login_add(@RequestParam(value = "username", required = false) String username,
-			@RequestParam(value = "password", required = false) String password, HttpSession session) throws Exception {
+			@RequestParam(value = "password", required = false) String password, 
+			HttpSession session) throws Exception 
+	{
 		LoginVO vo = loginDao.findBy_IdPwd(username, password);
 		if (vo == null) {
 			return "redirect:login.do?ecode=login_fail";

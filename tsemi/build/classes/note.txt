@@ -14,9 +14,9 @@ UPDATE login_T SET operator='Y' WHERE username='oper';
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
 
-// 질문DB
 // CREATE TABLE tmp_02(
 
+// 질문DB
 CREATE TABLE ques_T(
     no INT NOT NULL auto_increment PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
@@ -47,9 +47,9 @@ insert into recomA_T values(1, 'user');
 
 ------------------------------------------------------
 
-// 질문 답변DB
 // CREATE TABLE tmp_03(
 
+// 질문 답변DB
 CREATE TABLE quesAns_T(
 	ans_no INT NOT NULL auto_increment PRIMARY KEY,
     no INT NOT NULL,
