@@ -117,17 +117,21 @@
 ### 2. BackEnd 최예지
 ![image](https://user-images.githubusercontent.com/97445004/153974582-716bdb43-18c8-4b88-8005-e86c33f3354a.png)
 <br/>
+<br/>
 
+### [ 메인화면 ]
 ![image](https://user-images.githubusercontent.com/97445004/153990818-e9d596b5-9983-460c-8c79-189ad716bdff.png)
 > 각 게시판의 최신글 및 기능을 확인할 수 있습니다.
 <br/>
 
+### [ 마이페이지 ]
 ![image](https://user-images.githubusercontent.com/97445004/153982922-bf7fbeaf-791e-4ab0-b60c-7ae9a5e71fbd.png)
 > **회원**은메뉴에서 마이페이지를 선택하면 **마이페이지** 로 이동, 게시판에서 유저의 닉네임을 선택하면 **유저페이지** 로 이동합니다. <br/>
 > 글 목록을 열람할 수 있고 마이페이지인 경우 작성글을 삭제할 수 있습니다. <br/>
 > **운영자** 는 유저페이지에서 글 삭제가 가능합니다.
 <br/>
 
+### [ 공지사항 ]
 ![image](https://user-images.githubusercontent.com/97445004/153982368-f76a608e-c60c-421f-a81a-6d08df66d090.png)
 > **회원**은 공지사항에서 글을 열람할 수 있습니다. <br/>
 > **운영자**는 공지사항에서 글 작성, 삭제, 열람할 수 있습니다. 
@@ -138,7 +142,15 @@
 
 ### 3. BackEnd 한다영
 ![image](https://user-images.githubusercontent.com/97445004/153974615-29a09734-a96d-44ad-9f2f-dd097b180c1f.png)
+<br/>
+<br/>
+
+### [ Q & A / 질문하기 ] 
 ![image](https://user-images.githubusercontent.com/97445004/153982394-938b1160-e8d0-4007-b4af-fbf7b79fa75e.png)
+<br/>
+<br/>
+
+### [ 이달의 활동왕 ] 
 ![image](https://user-images.githubusercontent.com/97445004/153982330-562b5695-ec41-4ebc-b5d3-9c68ea28d2e1.png)
 > **회원**은 메뉴에서 Q & A / 잡담하기 게시판으로 이동하여  글 열람, 작성할 수 있습니다. <br/>
 > 또한 유익한 질문은 추천할 수 있고, 답변도 추천이 가능합니다. <br/> 
